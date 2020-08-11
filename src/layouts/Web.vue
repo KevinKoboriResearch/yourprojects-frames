@@ -1,5 +1,5 @@
 <template>
-  <div>
+<div>
     <q-layout
       view="hHh LpR lfr"
       style="color: #FF4235;"
@@ -71,6 +71,7 @@
         <RightDrawer />
       </q-drawer>
       <q-page-container>
+        <!-- <FadeTransition/> -->
         <div v-if="this.$route.fullPath != '/'"
           class="q-px-xl fit row wrap justify-center items-start content-center"
           :class="this.$route.fullPath.search(/\bios\b/) >= 0 ? '' : 'inset-shadow '"
@@ -111,9 +112,9 @@
         :class="this.$route.fullPath.search(/\bios\b/) >= 0 ? '' : 'inset-shadow '"
       >
         <div class="col-auto text-center">
-          <img class="img-logo" :src="require('../assets/your-trans-7.png')">
-            <div class="text-subtitle1"><strong>Criando um </strong><strong class="per-word-strong">único</strong>
-              <strong> produto, presente em todas as </strong><strong class="per-word-strong">plataformas.</strong></div>
+          <img class="img-logo" :src="require('../assets/your-trans-6.png')">
+            <div class="text-subtitle1"><strong>Criando um </strong><strong style="color: #a587ff;">único</strong>
+              <strong> produto, presente em todas as </strong><strong style="color: #a587ff;">plataformas.</strong></div>
               <br>
               <div class="text-weight-bolder text-h6">
                 Celulares / Tablets - iOS / Android
@@ -133,7 +134,15 @@
           </div>
         </div>
       </div>
+       <!-- <FadeTransition mode="out-in"> -->
+         <!-- <div transition-show="jump-down"
+  transition-hide="jump-up"> -->
+<transition name="fade" mode="out-in">
       <router-view />
+</transition>
+         <!-- </div> -->
+
+       <!-- </FadeTransition> -->
       <whatsapp/>
       </q-page-container>
       <q-footer
@@ -156,12 +165,14 @@
 import LeftDrawer from '../components/drawers/LeftDrawer'
 import RightDrawer from '../components/drawers/RightDrawer'
 import whatsapp from '../components/whatsapp/Dynamicwhatsapp'
+// import FadeTransition from './FadeTransition.vue'
 
 export default {
   components: {
     LeftDrawer,
     RightDrawer,
     whatsapp
+    // FadeTransition
   },
   data () {
     return {
