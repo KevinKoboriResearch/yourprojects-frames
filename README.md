@@ -38,6 +38,35 @@ trinagle: https://css-tricks.com/snippets/css/css-triangle/
 triangle generator: http://apps.eky.hk/css-triangle-generator/
 
 css shapes: https://css-tricks.com/the-shapes-of-css/
+
+JavaScript Security: Hide your Code?: https://www.youtube.com/watch?v=hOtZhNb4TKg
+
+css 3d image open:
+- https://stackoverflow.com/questions/55841149/how-to-achieve-depth-with-a-3d-css-transform
+- https://codepen.io/shounak-ghosh/pen/OBPOeY
+- https://codepen.io/akhil_001/pen/zoQdaO
+- http://demo.marcofolio.net/3d_animation_css3/
+
+keyyevents:
+https://stackoverflow.com/questions/38422076/how-to-set-keyup-on-whole-page-in-vue-js
+https://codepen.io/whitelynx/pen/wGvmdW
+https://github.com/vuejs/vue/issues/6457
+- https://www.it-swarm.dev/pt/vue.js/como-definir-o-keyup-na-pagina-inteira-no-vue.js/827262000/
+
+zoom iframe:
+- https://gist.github.com/kevingessner/5598913
+
+js to vuejs:
+- https://stackoverflow.com/questions/47281048/how-can-i-convert-following-code-to-a-vue-js-code
+- https://laracasts.com/discuss/channels/vue/help-convert-jquery-to-vuejs-syntax
+- https://css-tricks.com/making-the-move-from-jquery-to-vue/
+
+tabindex="-1"
+    @keydown.meta.187.capture.prevent.stop @keydown.meta.107.capture.prevent.stop
+    @keydown.meta.189.capture.prevent.stop @keydown.meta.109.capture.prevent.stop
+    @keydown.ctrl.187.capture.prevent.stop @keydown.ctrl.107.capture.prevent.stop
+    @keydown.ctrl.189.capture.prevent.stop @keydown.ctrl.109.capture.prevent.stop
+
 <!-- <q-icon class="text-grey-9" name="mdi-google-nearby"></q-icon> -->
 <!-- <q-icon class="text-grey-9" name="mdi-record"></q-icon> -->
 <!-- <q-space/> -->

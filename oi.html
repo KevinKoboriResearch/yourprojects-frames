@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    </head>
+    <body>
+        <iframe id="frame" style="width: 250px; border: solid 1px red;" ></iframe>
+        <script type="text/javascript">
+            var elFrame = $('#frame')[0];
+            $(elFrame.contentWindow).resize(function() {
+                $(window).trigger('zoom');
+            });
+
+            $(window).on('zoom', function() {
+                console.log('zoom', window.devicePixelRatio);
+            });
+        </script>
+    </body>
+</html>

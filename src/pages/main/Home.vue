@@ -2,10 +2,6 @@
   <div>
     <div class="transparent q-pa-md text-justify row wrap justify-center items-start content-start">
       <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-        <q-intersection
-            transition="scale"
-            class="example-item"
-          >
           <q-card>
             <img :src="require('../../assets/astronauta.gif')">
 
@@ -32,14 +28,9 @@
               <q-btn outline>Saiba Mais</q-btn>
             </q-card-section>
           </q-card>
-        </q-intersection>
         </div>
 
         <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-        <q-intersection
-            transition="scale"
-            class="example-item"
-          >
           <q-card>
             <img src="https://cdn.quasar.dev/img/mountains.jpg">
 
@@ -66,14 +57,9 @@
               <q-btn outline>Saiba Mais</q-btn>
             </q-card-section>
           </q-card>
-        </q-intersection>
         </div>
 
         <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-        <q-intersection
-            transition="scale"
-            class="example-item"
-          >
           <q-card>
             <img src="https://cdn.quasar.dev/img/mountains.jpg">
 
@@ -100,13 +86,8 @@
               <q-btn outline>Saiba Mais</q-btn>
             </q-card-section>
           </q-card>
-        </q-intersection>
         </div>
         <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-        <q-intersection
-            transition="scale"
-            class="example-item"
-          >
           <q-card>
             <img src="https://cdn.quasar.dev/img/mountains.jpg">
 
@@ -133,14 +114,9 @@
               <q-btn outline>Saiba Mais</q-btn>
             </q-card-section>
           </q-card>
-        </q-intersection>
         </div>
 
         <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-        <q-intersection
-            transition="scale"
-            class="example-item"
-          >
           <q-card>
             <img src="https://cdn.quasar.dev/img/mountains.jpg">
 
@@ -167,14 +143,9 @@
               <q-btn outline>Saiba Mais</q-btn>
             </q-card-section>
           </q-card>
-        </q-intersection>
         </div>
 
         <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-        <q-intersection
-            transition="scale"
-            class="example-item"
-          >
           <q-card>
             <img src="https://cdn.quasar.dev/img/mountains.jpg">
 
@@ -201,7 +172,6 @@
               <q-btn outline>Saiba Mais</q-btn>
             </q-card-section>
           </q-card>
-        </q-intersection>
       </div>
     </div>
   </div>

@@ -18,12 +18,16 @@ body::-webkit-scrollbar {
   border-radius: 0px;
 }
 
+.img-mini-logo {
+  height: 15px;
+}
+
 .img-logo {
   height: 30px;
 }
 
 .img-bg {
-  height: 100vh;
+  height: 98vh;
 }
 
 .footer-logo {
@@ -37,6 +41,229 @@ body::-webkit-scrollbar {
 .containerSizeTransition {
   transition: width .3s, height .3s;
 }
+/*
+#web-preview {
+  text-align: center;
+  width: 100vw;
+  height: 81vh;
+  margin: -20px auto 0;
+}
+
+#web-preview iframe {
+  margin-top: 0px;
+  width: 83.3vw;
+  height: 69vh;
+}
+
+#web-fullscreen-preview {
+  text-align: center;
+  width: 100vw;
+  height: 97.5vh;
+  background-size: 100vw 97.5vh;
+}
+
+#web-fullscreen-preview iframe {
+  margin-top: 0px;
+  width: 100vw;
+  height: 97.5vh;
+}
+
+#android-preview {
+  text-align: center;
+  width: 100vw;
+  height: 84vh;
+  background: url('./assets/frames/android.png') center top no-repeat;
+  background-size: 340px;
+  margin: 0 auto 0;
+}
+
+#android-preview iframe {
+  margin-top: 12px;
+  width: 318px;
+  height: 618px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+#ios-preview {
+  text-align: center;
+  width: 98vw;
+  height: 84vh;
+  background: url('./assets/frames/ios.png') center top no-repeat;
+  background-size: 340px;
+  margin: -4px auto 0;
+}
+
+#ios-preview iframe {
+  margin-top: 23px;
+  width: 294px;
+  height: 635px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+#windows-preview {
+  text-align: center;
+  width: 93vw;
+  height: 85.4vh;
+  background: url('./assets/frames/surfacebook-black.png') center 0px no-repeat;
+  background-size: 72vw;
+  margin: 0 auto 0;
+}
+
+#windows-preview iframe {
+  margin-top: 2vw;
+  width: 54vw;
+  height: 37vw;
+} */
+
+#web-preview {
+  text-align: center;
+  width: 100vw;
+  height: 81vh;
+  margin: -20px auto 0;
+}
+
+#web-preview iframe {
+  margin-top: 0px;
+  width: 83.3vw;
+  height: 69vh;
+}
+
+#web-fullscreen-preview {
+  text-align: center;
+  width: 100vw;
+  height: 97.5vh;
+  background-size: 100vw 97.5vh;
+}
+
+#web-fullscreen-preview iframe {
+  margin-top: 0px;
+  width: 100vw;
+  height: 97.5vh;
+}
+
+#android-preview {
+  text-align: center;
+  width: 100vw;
+  height: 680px;
+  background: url('./assets/frames/android.png') center top no-repeat;
+  background-size: 340px;
+  margin: 0 auto 0;
+}
+
+#android-preview iframe {
+  margin-top: 12px;
+  width: 318px;
+  height: 618px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+#ios-preview {
+  text-align: center;
+  width: 98vw;
+  height: 678px;
+  background: url('./assets/frames/ios.png') center top no-repeat;
+  background-size: 340px;
+  margin: -4px auto 0;
+}
+
+#ios-preview iframe {
+  margin-top: 23px;
+  width: 294px;
+  height: 635px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+#windows-preview {
+  text-align: center;
+  width: 93vw;
+  height: 860px;
+  background: url('./assets/frames/surfacebook-black.png') center top no-repeat;
+  background-size: 720px;
+  margin: 0 auto 0;
+}
+
+#windows-preview iframe {
+  margin-top: 2vw;
+  width: 54vw;
+  height: 37vw;
+}
+
+#mac-preview {
+  text-align: center;
+  width: 93vw;
+  height: 840px;
+  background: url('./assets/frames/imac-black.png') center top no-repeat;
+  background-size: 63vw;
+  margin: 0 auto 0;
+  /* text-align: center;
+  width: 93vw;
+  height: 668px;
+  background: url('./assets/frames/ipad-black.png') center top no-repeat;
+  background-size: 54vw;
+  margin: 0 auto 0; */
+}
+
+#mac-preview iframe {
+  margin-top: 2.5vw;
+  width: 58vw;
+  height: 32.5vw;
+  /* margin-top: 3.2vw;
+  width: 49.5vw;
+  height: 36.9vw;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px; */
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* .bounce-enter-active, .bounce-leave-active {
+  transition: opacity .5s;
+}
+.bounce-enter, .bounce-leave-to{
+  opacity: 0;
+} */
 
 .fade-enter-active, .fade-enter{
     -webkit-animation: moveFromRight .5s both ease;
@@ -99,7 +326,7 @@ body::-webkit-scrollbar {
   @keyframes moveFromRight {
     from {opacity: .7; -webkit-transform: translateX(100%); transform: translateX(100%); }
   }
-
+/*
   .drawer-closer .item-content {
     margin-left: 50px !important;
   }
@@ -158,5 +385,5 @@ body::-webkit-scrollbar {
   }
   .underline {
     text-decoration: underline;
-  }
+  } */
 </style>
