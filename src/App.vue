@@ -157,11 +157,11 @@ body::-webkit-scrollbar {
 }
 
 #android-preview iframe {
-  margin-top: 12px;
-  width: 318px;
-  height: 618px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  margin-top: 10px;
+  width: 320px;
+  height: 620px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
@@ -187,45 +187,37 @@ body::-webkit-scrollbar {
 
 #windows-preview {
   text-align: center;
-  width: 93vw;
+  /* width: 93vw; */
   height: 860px;
-  background: url('./assets/frames/surfacebook-black.png') center top no-repeat;
+  background: url('./assets/frames/surfacebook-black.png') center center no-repeat;
   background-size: 720px;
-  margin: 0 auto 0;
+  margin: -100px auto 0;
 }
 
 #windows-preview iframe {
-  margin-top: 2vw;
-  width: 54vw;
-  height: 37vw;
+  position: absolute;
+  margin: 185px -271px 0;
+  /* margin-top: 184px; */
+  width: 540px;
+  height: 364px;
 }
 
 #mac-preview {
   text-align: center;
-  width: 93vw;
+  /* align-items: center; */
+  /* width: 93vw; */
+
   height: 840px;
-  background: url('./assets/frames/imac-black.png') center top no-repeat;
-  background-size: 63vw;
-  margin: 0 auto 0;
-  /* text-align: center;
-  width: 93vw;
-  height: 668px;
-  background: url('./assets/frames/ipad-black.png') center top no-repeat;
-  background-size: 54vw;
-  margin: 0 auto 0; */
+  background: url('./assets/frames/imac-black.png') center center no-repeat;
+  background-size: 700px;
+  margin: -25px auto 0;
 }
 
 #mac-preview iframe {
-  margin-top: 2.5vw;
-  width: 58vw;
-  height: 32.5vw;
-  /* margin-top: 3.2vw;
-  width: 49.5vw;
-  height: 36.9vw;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px; */
+  position: absolute;
+  margin: 94px -323px 0;
+  width: 644px;
+  height: 364px;
 }
 
 .slide-fade-enter-active {

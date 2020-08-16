@@ -1,193 +1,102 @@
 <template>
-  <div>
-    <div class="transparent q-pa-md text-justify row wrap justify-center items-start content-start">
-      <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-          <q-card>
-            <img :src="require('../../assets/astronauta.gif')">
 
-            <q-card-section>
-              <div class="text-overline text-orange-9">Android & iOS</div>
-              <div class="text-h6">Dispositivos Mobile</div>
-              <div class="text-subtitle2">por Kevin Kobori</div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              Projeto 100% compatível com dispositivos mobile. Uma vez feito a lógica do código utilizando Javascript, Html e CSS com a ajuda da Framework VueJS
-              é possível exporta-lo tanto para dispositivos que utilizam Android quanto iOS. O aplicativo pode ser instalado tanto localmente(sem a necessidade
-              de publicação do app em alguma store) quanto direto da Play Store ou da Apple Store. Ótimo para aplicativos de administração empresarial ou de fácil
-              visualização de dados como: blogs, cursos online, petshops, sites estáticos de propaganda e Leads(captação de email).
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <strong>Ex: Smartphones e Tablets / iPhones e iPads.</strong>
-            </q-card-section>
-            <br>
-            <q-separator inset />
-
-            <q-card-section align="right">
-              <q-btn outline>Saiba Mais</q-btn>
-            </q-card-section>
-          </q-card>
-        </div>
-
-        <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-          <q-card>
-            <img src="https://cdn.quasar.dev/img/mountains.jpg">
-
-            <q-card-section>
-              <div class="text-overline text-orange-9">Windows & Mac OSX</div>
-              <div class="text-h6">Sistemas Operacionais</div>
-              <div class="text-subtitle2">por Kevin Kobori</div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              Projeto 100% compatível com a sua área de trabalho. Uma vez feito a lógica do código utilizando Javascript, Html e CSS com a ajuda da Framework VueJS
-              é possível exporta-lo para aplicações locais. O aplicativo pode ser instalado tanto localmente quanto divulgado para download local para seus clientes.
-              Ótimo para aplicações de administração empresarial ou de fácil
-              visualização de dados como: blogs, cursos online, petshops, sites estáticos de propaganda e Leads(captação de email).
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
-            </q-card-section>
-
-            <q-separator inset />
-
-            <q-card-section align="right">
-              <q-btn outline>Saiba Mais</q-btn>
-            </q-card-section>
-          </q-card>
-        </div>
-
-        <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-          <q-card>
-            <img src="https://cdn.quasar.dev/img/mountains.jpg">
-
-            <q-card-section>
-              <div class="text-overline text-orange-9">Chrome, Safari, Firefox...</div>
-              <div class="text-h6">Navegadores Web</div>
-              <div class="text-subtitle2">por Kevin Kobori</div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              Projeto 100% compatível com dispositivos mobile. Uma vez feito a lógica do código utilizando Javascript, Html e CSS com a ajuda da Framework VueJS
-              é possível exporta-la tanto para dispositivos que utilizam Android quanto iOS. O aplicativo pode ser instalado tanto localmente(sem a necessidade
-              de publicação do app em alguma store) quanto direto da Play Store ou da Apple Store. Ótimo para aplicativos de administração empresarial ou de fácil
-              visualização de dados como: blogs, cursos online, petshops, sites estáticos de propaganda e Leads(captação de email).
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
-            </q-card-section>
-
-            <q-separator inset />
-
-            <q-card-section align="right">
-              <q-btn outline>Saiba Mais</q-btn>
-            </q-card-section>
-          </q-card>
-        </div>
-        <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-          <q-card>
-            <img src="https://cdn.quasar.dev/img/mountains.jpg">
-
-            <q-card-section>
-              <div class="text-overline text-orange-9">Design Externo da Página</div>
-              <div class="text-h6">Layouts</div>
-              <div class="text-subtitle2">por Kevin Kobori</div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              Componentes permitem você dividir a UI em partes independentes,
-              reutilizáveis, ou seja, trata cada parte da aplicação como um bloco isolado,
-              livre de outras dependências externas. Componentes são como funções JavaScript.
-              Eles aceitam entradas e retornam elementos VueJS que descrevem o que deve aparecer na tela.
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
-            </q-card-section>
-
-            <q-separator inset />
-
-            <q-card-section align="right">
-              <q-btn outline>Saiba Mais</q-btn>
-            </q-card-section>
-          </q-card>
-        </div>
-
-        <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-          <q-card>
-            <img src="https://cdn.quasar.dev/img/mountains.jpg">
-
-            <q-card-section>
-              <div class="text-overline text-orange-9">Design Interno da Página</div>
-              <div class="text-h6">Componentes</div>
-              <div class="text-subtitle2">por Kevin Kobori</div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              Componentes permitem você dividir a UI em partes independentes,
-              reutilizáveis, ou seja, trata cada parte da aplicação como um bloco isolado,
-              livre de outras dependências externas. Componentes são como funções JavaScript.
-              Eles aceitam entradas e retornam elementos VueJS que descrevem o que deve aparecer na tela.
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
-            </q-card-section>
-
-            <q-separator inset />
-
-            <q-card-section align="right">
-              <q-btn outline>Saiba Mais</q-btn>
-            </q-card-section>
-          </q-card>
-        </div>
-
-        <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-          <q-card>
-            <img src="https://cdn.quasar.dev/img/mountains.jpg">
-
-            <q-card-section>
-              <div class="text-overline text-orange-9">Material Design Icons</div>
-              <div class="text-h6">Icones</div>
-              <div class="text-subtitle2">por Kevin Kobori</div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              Componentes permitem você dividir a UI em partes independentes,
-              reutilizáveis, ou seja, trata cada parte da aplicação como um bloco isolado,
-              livre de outras dependências externas. Componentes são como funções JavaScript.
-              Eles aceitam entradas e retornam elementos VueJS que descrevem o que deve aparecer na tela.
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
-            </q-card-section>
-
-            <q-separator inset />
-
-            <q-card-section align="right">
-              <q-btn outline>Saiba Mais</q-btn>
-            </q-card-section>
-          </q-card>
-      </div>
-    </div>
+  <div
+    class="transparent text-justify row wrap justify-center items-start"
+  >
+  <!-- class="row justify-center" -->
+    <!-- <div id="wrapper"> -->
+      <h1>3d animation using pure CSS3<small>Movie Posters Example</small></h1>
+      <!-- <h2><a href="http://www.marcofolio.net/" title="Visit Marcofolio.net">Marcofolio.net</a></h2> -->
+      <!-- <div id="content"> -->
+        <!-- <p class="info">Here's an example of pretty powerful CSS3 animation and 3d effects. Using the <code>perspective</code>, <code>transform</code> and <code>transition</code> properties, we can create a 3d animation effect. Simply hover over the movie posters below to see the effect in it's full glory.</p>
+        <p class="info">Just make sure you're running the latest version of a <code>-webkit</code> based browser (Apple Safari or Google Chrome) to see the effect. If you don't have any of those browers, visit the article to see a video of the effect.</p> -->
+        <ul id="movieposters">
+          <li class="q-pa-md col-xs-12 col-sm-6 col-md-4">
+            <img src="../../assets/images/01_iron_man_2.jpg" alt="Iron Man 2" />
+            <div class="movieinfo">
+              <h3>Iron Man 2</h3>
+              <p>With the world now aware of his dual life as the armored superhero Iron Man, billionaire inventor Tony...</p>
+              <a href="http://www.imdb.com/title/tt1228705/" title="Iron Man 2">More info</a>
+            </div>
+          </li>
+          <li class="q-pa-md col-xs-12 col-sm-6 col-md-4">
+            <img src="../../assets/images/02_the_last_airbender.jpg" alt="The Last Airbender" />
+            <div class="movieinfo">
+              <h3>The Last Airbender</h3>
+              <p>The story follows the adventures of Aang, a young successor to a long line of Avatars, who must put his...</p>
+              <a href="http://www.imdb.com/title/tt0938283/" title="Iron Man 2">More info</a>
+            </div>
+          </li>
+          <li class="q-pa-md col-xs-12 col-sm-6 col-md-4">
+            <img src="../../assets/images/03_tron_legacy.jpg" alt="Tron Legacy" />
+            <div class="movieinfo">
+              <h3>Tron Legacy</h3>
+              <p>Sam Flynn, the tech-savvy 27-year-old son of Kevin Flynn, looks into his father's disappearance and finds...</p>
+              <a href="http://www.imdb.com/title/tt1104001/" title="Tron Legacy">More info</a>
+            </div>
+          </li>
+        </ul>
+      <!-- </div> -->
+    <!-- </div> -->
   </div>
 </template>
 
 <script>
 export default {
-  components: {
-  },
-  data () {
-    return {
-    }
-  },
-  methods: {
-  },
-  computed: {
-  }
+
 }
 </script>
+
+<style>
+/* BASIC RESET */
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{margin:0; padding:0;}
+
+/* HTML ELEMENTS */
+body { background-color:#deddcd; font:14px/21px Arial,Helvetica,sans-serif; }
+h1 { font: bold 65px/60px Helvetica, Arial, Sans-serif; text-align: center; color: #eee; text-shadow: 0px 2px 6px #333; }
+h1 small{ font-size: 20px; text-transform:uppercase; letter-spacing: 14px; display: block; color: #000; }
+h2 a { display: block; text-decoration: none; margin: 0 0 30px 0; font: italic 45px Georgia, Times, Serif;  text-align: center; color: #bfe1f1; text-shadow: 0px 2px 6px #333; }
+h2 a:hover { color: #90bcd0; }
+
+/* COMMON CLASSES */
+.break { clear:both; }
+
+/* WRAPPER */
+#wrapper { width:960px; margin:40px auto; }
+
+/* CONTENT */
+#content { }
+#content .info { padding:10px; }
+
+/* MOVIE POSTERS */
+#movieposters { justify: center; list-style:none; margin:0 0; height:550px; }
+#movieposters li {
+  margin:100px 0;
+  display:inline;
+  float:left;
+  -webkit-perspective: 500;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition-property: perspective;
+ -webkit-transition-duration: 0.5s;
+}
+
+#movieposters li:hover { -webkit-perspective: 5000; }
+
+#movieposters li img { border:10px solid #fcfafa; -webkit-transform: rotateY(30deg);
+-moz-box-shadow:0 3px 10px #888; -webkit-box-shadow:0 3px 10px #888;
+-webkit-transition-property: transform; -webkit-transition-duration: 0.5s; }
+#movieposters li:hover img { -webkit-transform: rotateY(0deg); }
+
+.movieinfo { border:10px solid #fcfafa; padding:20px; width:200px; height:180px; background-color:#deddcd; margin:-195px 0 0 55px; position:absolute;
+-moz-box-shadow:0 20px 40px #888; -webkit-box-shadow:0 20px 40px #888;
+-webkit-transform: translateZ(30px) rotateY(30deg);
+-webkit-transition-property: transform, box-shadow, margin; -webkit-transition-duration: 0.5s; }
+
+#movieposters li:hover .movieinfo { -webkit-transform: rotateY(0deg); -webkit-box-shadow:0 5px 10px #888; margin:-175px 0 0 30px; }
+
+.movieinfo h3 { color:#7a3f3a; font-variant: small-caps; font-family:Georgia,serif,Times; text-align:center; padding-bottom:15px; }
+.movieinfo p { padding-bottom:15px; }
+.movieinfo a { background-color:#7a3f3a; padding:5px 10px; color:#eee; text-decoration:none; display:block; width:80px; text-align:center; margin:0 auto;
+-moz-border-radius:5px; -webkit-border-radius:5px; }
+.movieinfo a:hover, .movieinfo a:focus { background-color:#6a191f; color:#fff; }
+</style>

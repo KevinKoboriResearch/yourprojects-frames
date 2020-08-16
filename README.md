@@ -45,12 +45,12 @@ css 3d image open:
 - https://stackoverflow.com/questions/55841149/how-to-achieve-depth-with-a-3d-css-transform
 - https://codepen.io/shounak-ghosh/pen/OBPOeY
 - https://codepen.io/akhil_001/pen/zoQdaO
-- http://demo.marcofolio.net/3d_animation_css3/
+- http://marcofolio.net/3d-animation-css3/
 
 keyyevents:
-https://stackoverflow.com/questions/38422076/how-to-set-keyup-on-whole-page-in-vue-js
-https://codepen.io/whitelynx/pen/wGvmdW
-https://github.com/vuejs/vue/issues/6457
+- https://stackoverflow.com/questions/38422076/how-to-set-keyup-on-whole-page-in-vue-js
+- https://codepen.io/whitelynx/pen/wGvmdW
+- https://github.com/vuejs/vue/issues/6457
 - https://www.it-swarm.dev/pt/vue.js/como-definir-o-keyup-na-pagina-inteira-no-vue.js/827262000/
 
 zoom iframe:

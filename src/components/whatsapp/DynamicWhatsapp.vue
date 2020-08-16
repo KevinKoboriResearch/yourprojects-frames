@@ -5,9 +5,8 @@
       <q-btn
         @click="open('bottom')"
         v-touch-pan.prevent.mouse="moveFab"
-        glossy
         :disable="draggingFab"
-        class="shadow-0 text-white" padding="none" style="background-color:#212121; border-top-left-radius: 50px; border-top-right-radius: 50px;
+        class="shadow-0 text-white" padding="none" style="background-color:#21212188; border-top-left-radius: 50px; border-top-right-radius: 50px;
         border-bottom-left-radius: 0px; border-bottom-right-radius: 50px;"
       >
         <q-icon name="mdi-whatsapp" color="light-green-14" size="50px" />
@@ -58,15 +57,16 @@
         </q-card-section>
         <q-card-section class="row q-pa-none bg-brown-2">
           <div class="bg-brown-2">
-            <q-input @mouseover="shadow = true" @mouseleave="shadow = false" rounded class="q-py-sm q-pl-sm q-pr-xs" style="min-width: 286px;" dense v-model="text" standout="bg-teal-9 text-white" placeholder="Escreva algo...">
+            <q-input @mouseover="shadow = true" @mouseleave="shadow = false" rounded class="q-py-sm q-pl-sm q-pr-xs"
+              style="min-width: 286px;" dense v-model="text" standout="bg-teal-1" bg-color="teal-9" placeholder="Escreva algo...">
               <template v-slot:append>
-                <q-icon name="mdi-close-circle" color="brown-1" size="xs" class="cursor-pointer" @click="text = ''" />
+                <q-icon name="mdi-close-circle" size="xs" class="cursor-pointer" @click="text = ''" />
               </template>
             </q-input>
           </div>
           <q-space />
           <div class="q-py-xs q-pr-sm">
-              <q-btn round flat icon="mdi-send" color="teal-9" size="10px" class="q-pa-sm" @click="openInNewWindow()" v-close-popup />
+            <q-btn round flat icon="mdi-send" color="teal-9" size="10px" class="q-pa-sm" @click="openInNewWindow()" v-close-popup />
           </div>
         </q-card-section>
       </q-card>
@@ -78,7 +78,6 @@
 export default {
   data: () => ({
     fab: false,
-    fav: true,
     menu: false,
     message: false,
     hints: true,

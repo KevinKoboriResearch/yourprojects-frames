@@ -1,18 +1,11 @@
 <template>
   <div
   >
-    <!-- tabindex="-1"
+  <!-- tabindex="-1"
     @keydown.meta.187.capture.prevent.stop @keydown.meta.107.capture.prevent.stop
     @keydown.meta.189.capture.prevent.stop @keydown.meta.109.capture.prevent.stop
     @keydown.ctrl.187.capture.prevent.stop @keydown.ctrl.107.capture.prevent.stop
     @keydown.ctrl.189.capture.prevent.stop @keydown.ctrl.109.capture.prevent.stop -->
-    <!-- @keyup.enter="keyhandler()" -->
-<!-- v-on:keyup.13="keyboardEvent" -->
-<!-- <br><br><br><br><br><br> -->
-<!-- <keyboard-events><input @keydown="keyboardEvent()" /></keyboard-events> -->
-<!-- <input v-on:keyup.13="keyboardEvent"> -->
-<!-- @keydown.shift.56.capture.prevent.stop="keyhandler()" -->
-  <!-- {{tabVal}} -->
     <q-layout
       view="lHr LpR lfr"
       :style="$q.dark.isActive ? 'background-image: linear-gradient(to bottom right, black, #512fa9); color: ' + darkThemeColor
@@ -22,40 +15,28 @@
         class="transparent"
         reveal
       >
-      <!-- <input/> -->
-      <!-- <input
-        @keydown.meta.187.capture.prevent.stop="keyhandler()" @keydown.meta.107.capture.prevent.stop="keyhandler()"
-        @keydown.meta.189.capture.prevent.stop="keyhandler()" @keydown.meta.109.capture.prevent.stop="keyhandler()"
-        @keydown.ctrl.187.capture.prevent.stop="keyhandler()" @keydown.ctrl.107.capture.prevent.stop="keyhandler()"
-        @keydown.ctrl.189.capture.prevent.stop="keyhandler()" @keydown.ctrl.109.capture.prevent.stop="keyhandler()"
-      /> -->
-      <!-- <input @keydown.ctrl.187.prevent.stop="keyhandler()"
-      @keydown.ctrl.107.prevent.stop="keyhandler()"
-      @keydown.91.187.prevent.stop="keyhandler()"
-      @keydown.91.107.prevent.stop="keyhandler()"/> -->
-        <!-- <input @keydown="keyhandler()" /> -->
-      <!-- </input> -->
-      <!-- <img :src="require('../assets/your-trans-11.png')" @click="toggleZoomScreen()"> -->
-      <!-- <img @click="toggleZoomScreen()" class="img-logo" :src="$q.dark.isActive ? require('../assets/your-trans-11.png') : require('../assets/your-trans-10.png')"> -->
-        <div class="row no-wrap">
+        <div class="row justify-center">
           <q-btn
+            v-if="windowWidth >= 470"
             @click="left = !left"
             dense
             flat
             :color="$q.dark.isActive ? 'white': 'black'"
-            icon="menu"
             class="q-pa-none q-ma-sm"
-          />
-          <q-space/>
+          >
+            <q-icon :color="$q.dark.isActive ? 'white' : 'black'" :name="left ? 'mdi-menu-open' : 'mdi-backburger'"
+              :style="left ? '' : 'transform: rotate(180deg);' "/>
+            </q-btn>
+            <q-space/>
           <div class="justify-center">
             <q-tabs class="row justify-center" no-caps
-            style="border-top-left-radius: 0px;
-              border-top-right-radius: 0px;
-              border-bottom-left-radius: 5px;
-              border-bottom-right-radius: 5px;"
-            :style="$q.dark.isActive ?
-              'background-color: ' + darkThemeBGColor + '; color: ' + darkThemeColor
-              : 'background-color: ' + lightThemeBGColor + '; color: ' + lightThemeColor"
+              style="border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;"
+              :style="$q.dark.isActive ?
+                'background-color: ' + darkThemeBGColor + '; color: ' + darkThemeColor
+                : 'background-color: ' + lightThemeBGColor + '; color: ' + lightThemeColor"
             >
               <div @click="tab = 'home'" class="col q-pa-none">
                 <q-route-tab label="Início" to="/"/>
@@ -63,15 +44,16 @@
               <div @click="tab = 'about'" class="col q-pa-none">
                 <q-route-tab label="Sobre" to="/about"/>
               </div>
-                <q-btn @click="mainArea == false ? (toggleZoomScreen(), mainArea = !mainArea) : tab = 'yourprojects', toggleZoomScreen()" size="18.5px" flat
-                class="col q-pa-none"
-                style="border-top-left-radius: 0px;
-                  border-top-right-radius: 0px;
-                  border-bottom-left-radius: 0px;
-                  border-bottom-right-radius: 0px;"
+                <q-btn @click="mainArea == false ? (toggleZoomScreen(), mainArea = !mainArea)
+                  : tab == 'yourprojects' ? mainArea = !mainArea : tab = 'yourprojects', toggleZoomScreen()" size="18.5px" flat
+                  class="col q-pa-none"
+                  style="border-top-left-radius: 0px;
+                    border-top-right-radius: 0px;
+                    border-bottom-left-radius: 0px;
+                    border-bottom-right-radius: 0px;"
                 >
-                <img class="img-logo" :src="$q.dark.isActive ? require('../assets/your-trans-11.png') : require('../assets/your-trans-10.png')">
-              </q-btn>
+                  <img class="img-logo" :src="$q.dark.isActive ? require('../assets/your-trans-11.png') : require('../assets/your-trans-10.png')">
+                </q-btn>
               <div @click="tab = 'services'" class="col q-pa-none">
                 <q-route-tab label="Servicos" to="/services"/>
               </div>
@@ -80,20 +62,23 @@
               </div>
             </q-tabs>
           </div>
-          <q-space/>
-           <q-btn
+            <q-space/>
+            <q-btn
+            v-if="windowWidth >= 470"
             @click="right = !right"
             dense
             flat
             :color="$q.dark.isActive ? 'white': 'black'"
-            icon="menu"
             class="q-pa-none q-ma-sm"
-          />
-            </div>
+          >
+            <q-icon :color="$q.dark.isActive ? 'white' : 'black'" :name="right ? 'mdi-menu-open' : 'mdi-backburger'"
+              :style="right ? 'transform: rotate(180deg);' : '' "/>
+            </q-btn>
+        </div>
       </q-header>
       <q-drawer flat content-class="" bordered :width="250" v-model="left" side="left">
-        <q-color no-header default-view="palette" :palette="palette" v-model="lightThemeBGColor" />
-        <q-color no-header default-view="palette" :palette="palette" v-model="lightThemeColor" />
+        <!-- <q-color no-header default-view="palette" :palette="palette" v-model="lightThemeBGColor" />
+        <q-color no-header default-view="palette" :palette="palette" v-model="lightThemeColor" /> -->
         <q-color no-header default-view="palette" :palette="palette" v-model="darkThemeBGColor" />
         <q-color no-header default-view="palette" :palette="palette" v-model="darkThemeColor" />
         <LeftDrawer />
@@ -127,41 +112,51 @@
                       no-caps
                       v-model="ecoSystem"
                     >
-                      <q-tab
-                        @click="ecoSystem = 'web'"
-                        class="col-2"
-                        name="web"
-                        icon="mdi-web"
-                        label="Web"
-                      />
-                      <q-tab
-                        @click="ecoSystem = 'android'"
-                        class="col-2"
-                        name="android"
-                        icon="mdi-android"
-                        label="Android"
-                      />
-                      <q-tab
-                        @click="ecoSystem = 'ios'"
-                        class="col-2"
-                        name="ios"
-                        icon="mdi-cellphone-iphone"
-                        label="iPhone"
-                      />
-                      <q-tab
-                        @click="ecoSystem = 'windows'"
-                        class="col-2"
-                        name="windows"
-                        icon="mdi-microsoft"
-                        label="Windows"
-                      />
-                      <q-tab
-                        @click="ecoSystem = 'mac'"
-                        class="col-2"
-                        name="mac"
-                        icon="mdi-apple"
-                        label="Mac"
-                      />
+                      <div class="col">
+                        <q-tab
+                        class="q-ma-none q-pa-none"
+                          @click="ecoSystem = 'web'"
+                          name="web"
+                          icon="mdi-web"
+                          label="Web"
+                        />
+                      </div>
+                      <div class="col">
+                        <q-tab
+                        class="q-ma-none q-pa-none"
+                          @click="ecoSystem = 'android'"
+                          name="android"
+                          icon="mdi-android"
+                          label="Android"
+                        />
+                      </div>
+                      <div class="col">
+                        <q-tab
+                        class="q-ma-none q-pa-none"
+                          @click="ecoSystem = 'ios'"
+                          name="ios"
+                          icon="mdi-cellphone-iphone"
+                          label="iPhone"
+                        />
+                      </div>
+                      <div class="col">
+                        <q-tab
+                        class="q-ma-none q-pa-none"
+                          @click="ecoSystem = 'windows'"
+                          name="windows"
+                          icon="mdi-microsoft"
+                          label="Windows"
+                        />
+                      </div>
+                      <div class="col">
+                        <q-tab
+                        class="q-ma-none q-pa-none"
+                          @click="ecoSystem = 'mac'"
+                          name="mac"
+                          icon="mdi-apple"
+                          label="Mac"
+                        />
+                      </div>
                     </q-tabs>
                   </q-tab-panel>
                   <q-tab-panel style="min-width: 390px;" class="q-pa-md" name="services">
@@ -239,40 +234,36 @@
               </q-tab-panel>
               <q-tab-panel class="q-pa-none" name="android">
                 <div id="android-preview" class="platform-android mat-only">
-                  <iframe id="android-iframe" frameborder="0" :src="'http://localhost:8080/#/android' + this.$route.fullPath"/>
+                  <iframe id="android-iframe" frameborder="0" :src="'http://localhost:8080/#' + this.$route.fullPath"/>
                 </div>
               </q-tab-panel>
 
               <q-tab-panel class="q-pa-none" name="ios">
                 <div id="ios-preview" class="platform-ios mat-only">
-                  <iframe id="ios-iframe" frameborder="0" :src="'http://localhost:8080/#/ios' + this.$route.fullPath"/>
+                  <iframe id="ios-iframe" frameborder="0" :src="'http://localhost:8080/#' + this.$route.fullPath"/>
                 </div>
               </q-tab-panel>
 
               <q-tab-panel class="q-pa-none" name="windows">
                 <div id="windows-preview" class="platform-windows mat-only">
-                  <iframe id="windows-iframe" frameborder="0" :src="'http://localhost:8080/#/windows' + this.$route.fullPath" />
+                  <iframe id="windows-iframe" frameborder="0" :src="'http://localhost:8080/#' + this.$route.fullPath" />
                 </div>
               </q-tab-panel>
               <q-tab-panel class="q-pa-none" name="mac">
-                <!-- <div class="transparent q-pa-md text-justify row wrap justify-center items-start content-start"> -->
-                  <!-- <div class="q-pa-md col-xs-12 col-sm-12 col-md-12"> -->
-                    <div id="mac-preview" class="platform-mac mat-only">
-                      <iframe id="mac-iframe" frameborder="0" :src="'http://localhost:8080/#/mac' + this.$route.fullPath"/>
-                    </div>
-                  <!-- </div> -->
-                <!-- </div> -->
+                <div id="mac-preview" class="platform-mac mat-only">
+                  <iframe id="mac-iframe" frameborder="0" :src="'http://localhost:8080/#' + this.$route.fullPath"/>
+                </div>
               </q-tab-panel>
             </q-tab-panels>
           </div>
         </transition>
         <div v-if="mainArea == false">
-          <div v-if="tab == 'home'">
+          <!-- <div v-if="tab == 'home'">
             <transition name="fade">
               <router-view />
             </transition>
-          </div>
-          <div v-else-if="tab == 'about'">
+          </div> -->
+          <!-- <div v-else-if="tab == 'about'">
             <transition
               name="custom-classes-transition"
               enter-active-class="animated tada"
@@ -280,17 +271,17 @@
             >
               <router-view />
             </transition>
-          </div>
-          <div v-else-if="tab == 'services'">
-            <transition name="slide-fade">
+          </div> -->
+          <div>
+            <transition name="slide-fade" mode="out-in">
               <router-view />
             </transition>
           </div>
-          <div v-else>
+          <!-- <div v-else>
             <transition name="bounce">
               <router-view />
             </transition>
-          </div>
+          </div> -->
           <!-- <div v-else>
             <transition
               v-on:before-enter="beforeEnter"
@@ -302,17 +293,89 @@
             </transition>
           </div> -->
         </div>
-        <whatsapp />
+        <DynamicWhatsapp />
         <DynamicThemeChange />
-        <DynamicFullScreen />
-          <!-- v-if="mainArea" -->
+            <q-page-sticky position="top-right" :offset="windowWidth <= 470 ? [12, 60] : [12, 12]">
+      <q-btn
+            @click="$q.fullscreen.toggle()"
+            flat
+            padding="none" style="border-top-left-radius: 0px; border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
+            :style="'backgroud-color: ' + $q.dark.isActive ? 'white' : 'black'"
+          >
+            <q-icon :color="$q.dark.isActive ? 'white' : 'black'" :name="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"/>
+          </q-btn>
+    </q-page-sticky>
+        <q-page-sticky position="top-right" :offset="windowWidth <= 470 ? [14, 108] : [14, 60]">
+      <q-btn
+            @click="$q.dark.toggle()"
+            flat
+            padding="none"
+            class="q-pa-none q-ma-none"
+            style="border-top-left-radius: 0px; border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
+            :style="'backgroud-color: ' + $q.dark.isActive ? 'white' : 'black'"
+          >
+            <q-icon size="20px" :color="$q.dark.isActive ? 'white' : 'black'" name="mdi-compare"/>
+          </q-btn>
+    </q-page-sticky>
+        <q-page-sticky position="top-right" :offset="windowWidth <= 470 ? [12, 60] : [12, 12]">
+      <q-btn
+            @click="$q.fullscreen.toggle()"
+            flat
+            padding="none" style="border-top-left-radius: 0px; border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
+            :style="'backgroud-color: ' + $q.dark.isActive ? 'white' : 'black'"
+          >
+            <q-icon :color="$q.dark.isActive ? 'white' : 'black'" :name="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"/>
+          </q-btn>
+    </q-page-sticky>
+          <!-- <q-page-sticky
+          position="top-left" :offset="windowWidth <= 470 ? [12, 108] : [12, 60]">
+          <q-btn
+            @click="customColors = !customColors"
+            flat
+            padding="none" style="border-top-left-radius: 0px; border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
+            :style="'backgroud-color: ' + $q.dark.isActive ? 'white' : 'black'"
+          >
+            <q-icon :color="$q.dark.isActive ? 'white' : 'black'" name="mdi-water"/>
+          </q-btn>
+        </q-page-sticky> -->
+         <q-page-sticky
+          position="top-left" :offset="[12, 12]">
+          <q-btn
+            v-if="windowWidth <= 470"
+            @click="left = !left"
+            dense
+            flat
+            padding="none"
+            :color="$q.dark.isActive ? 'white': 'black'"
+            class="q-pa-none"
+          ><q-icon :color="$q.dark.isActive ? 'white' : 'black'" :name="left ? 'mdi-menu-open' : 'mdi-backburger'"
+              :style="left ? '' : 'transform: rotate(180deg);' "/>
+              </q-btn>
+        </q-page-sticky>
+         <q-page-sticky
+          position="top-right" :offset="[12, 12]">
+           <q-btn
+            v-if="windowWidth <= 470"
+            @click="right = !right"
+            dense
+            flat
+            padding="none"
+            :color="$q.dark.isActive ? 'white': 'black'"
+            class="q-pa-none"
+          >
+            <q-icon :color="$q.dark.isActive ? 'white' : 'black'" :name="right ? 'mdi-menu-open' : 'mdi-backburger'"
+              :style="right ? 'transform: rotate(180deg);' : '' "/>
+            </q-btn>
+        </q-page-sticky>
         <q-page-sticky
-          position="top-left" :offset="fabPos">
+          position="top-left" :offset="windowWidth <= 470 ? [12, 60] : [12, 12]">
           <q-btn
             @click="mainArea = !mainArea, toggleZoomScreen()"
-            v-touch-pan.prevent.mouse="moveFab"
             flat
-            :disable="draggingFab"
             padding="none" style="border-top-left-radius: 0px; border-top-right-radius: 0px;
             border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
             :style="'backgroud-color: ' + $q.dark.isActive ? 'white' : 'black'"
@@ -320,22 +383,8 @@
             <q-icon :color="$q.dark.isActive ? 'white' : 'black'" :name="mainArea ? 'close' : 'mdi-tablet-cellphone'"/>
           </q-btn>
         </q-page-sticky>
-          <q-page-sticky
-          position="top-left" :offset="[12, 60]">
-          <q-btn
-            @click="customColors = !customColors"
-            v-touch-pan.prevent.mouse="moveFab"
-            flat
-            :disable="draggingFab"
-            padding="none" style="border-top-left-radius: 0px; border-top-right-radius: 0px;
-            border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
-            :style="'backgroud-color: ' + $q.dark.isActive ? 'white' : 'black'"
-          >
-            <q-icon :color="$q.dark.isActive ? 'white' : 'black'" :name="mainArea ? 'mdi-water' : 'mdi-tablet-cellphone'"/>
-          </q-btn>
-        </q-page-sticky>
       </q-page-container>
-      <q-footer
+      <!-- <q-footer
         v-if="!mainArea"
         container
         elevated
@@ -348,42 +397,23 @@
           <img class="footer-logo" :src="$q.dark.isActive ? require('../assets/your-trans-5.png') : require('../assets/your-trans-9.png')">
           <q-space/>
         </q-toolbar>
-      </q-footer>
+      </q-footer> -->
     </q-layout>
   </div>
-  <!-- </keyboard-events>? -->
 </template>
 
 <script>
 import LeftDrawer from '../components/drawers/LeftDrawer'
 import RightDrawer from '../components/drawers/RightDrawer'
-import whatsapp from '../components/whatsapp/Dynamicwhatsapp'
+import DynamicWhatsapp from '../components/whatsapp/DynamicWhatsapp'
 import DynamicThemeChange from '../components/whatsapp/DynamicThemeChange'
-import DynamicFullScreen from '../components/whatsapp/DynamicFullScreen'
-// import keyboardEvents from '../components/keyboardEvents'
 
 export default {
   components: {
     LeftDrawer,
     RightDrawer,
-    whatsapp,
-    DynamicThemeChange,
-    DynamicFullScreen
-    // keyboardEvents
-  },
-  created () {
-    // document.body.style.zoom = '100%'
-  //   var elFrame = $('#ios-preview')[0] //pegando o elemento
-  //   $(elFrame.contentWindow).resize(function() {
-  //       $(window).trigger('zoom')
-  //   })
-
-  //   $(window).on('zoom', function() {
-  //       console.log('zoom', window.devicePixelRatio)
-  //   })
-  // },
-  // beforeDestroy () {
-    // window.removeEventListener('keyup', this.handler);
+    DynamicWhatsapp,
+    DynamicThemeChange
   },
   data () {
     return {
@@ -394,21 +424,41 @@ export default {
       right: false,
       showWallE: true,
       ecoSystem: 'ios',
-      customColors: false,
       frameWebSiteVal: 'http://www.yourprojects.net/#',
       dialog: false,
       maximizedToggle: true,
       darkThemeBGColor: '#242424FF',
       darkThemeColor: '#FFFFFFFF',
-      lightThemeBGColor: '#FFFFFFFF',
-      lightThemeColor: '#242424FF',
-      palette: ['#FFFFFFFF', '#F2C037FF', '#21BA45FF', '#26A69AFF', '#31CCECFF', '#1976D2FF', '#e600e2ff', '#512fa9ff', '#aa0000ff', '#242424ff'],
-      ab: false,
-      fabPos: [12, 12],
-      draggingFab: false
+      // lightThemeBGColor: '#FFFFFFFF',
+      // lightThemeColor: '#242424FF',
+      // customColors: false,
+      // palette: ['#FFFFFFFF', '#F2C037FF', '#21BA45FF', '#26A69AFF', '#31CCECFF', '#1976D2FF', '#e600e2FF', '#512fa9FF', '#aa0000FF', '#242424FF'],
+      windowWidth: window.innerWidth,
+      windowHeight: window.innerHeight,
+      txt: ''
     }
   },
+  watch: {
+    windowHeight (newHeight, oldHeight) {
+      this.txt = `it changed to ${newHeight} from ${oldHeight}`
+    },
+    windowWidth (newWidth, oldWidth) {
+      this.txt = `it changed to ${newWidth} from ${oldWidth}`
+    }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.onResize)
+  },
   methods: {
+    onResize () {
+      this.windowHeight = window.innerHeight
+      this.windowWidth = window.innerWidth
+    },
     keyboardEvent (e) {
       if (e.which === 13) {
         this.tabVal = 'oi'
@@ -416,13 +466,6 @@ export default {
         alert('you didn t type +, did you?')
       }
     },
-    // keyhandler (event) {
-    //   if (event.key === '+') {
-    //     // do something
-    //     this.tabVal = 'home'
-    //     event.preventDefault()
-    //   }
-    // },
     keyhandler (event) {
       this.tabVal = 'oi'
       alert('you didn t type +, did you?')
@@ -461,25 +504,9 @@ export default {
         translateX: '30px',
         opacity: 0
       }, { complete: done })
-    },
-    moveFab (ev) {
-      this.draggingFab = ev.isFirst !== true && ev.isFinal !== true
-
-      this.fabPos = [
-        this.fabPos[0] - ev.delta.x,
-        this.fabPos[1] - ev.delta.y
-      ]
     }
   },
   computed: {
-    // toggleZoomScreen: {
-    //   get () {
-    //     return this.tabVal
-    //   },
-    //   set (val) {
-    //     document.body.style.zoom = '59%'
-    //   }
-    // },
     mainArea: {
       get () {
         return this.mainAreaVal
