@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 import button from './button'
 import showcase from './showcase'
 import walle from './walle'
-import themeColors from './theme-colors'
+import colors from './colors'
 import window from './window'
 
 Vue.use(Vuex)
@@ -24,7 +24,7 @@ export default function (/* { ssrContext } */) {
       button,
       showcase,
       walle,
-      themeColors,
+      colors,
       window
     },
 

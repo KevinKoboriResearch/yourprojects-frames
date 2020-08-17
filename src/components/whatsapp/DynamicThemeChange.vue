@@ -39,7 +39,7 @@ export default {
         return this.themeBGColorVal
       },
       set (val) {
-        this.$store.commit('themeColors/updateThemeBGColor', val)
+        this.$store.commit('colors/updateThemeBGColor', val)
         this.themeBGColorVal = val
       }
     },
@@ -48,7 +48,7 @@ export default {
         return this.themeColorVal
       },
       set (val) {
-        this.$store.commit('themeColors/updateThemeColor', val)
+        this.$store.commit('colors/updateThemeColor', val)
         this.themeColorVal = val
       }
     }

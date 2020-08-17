@@ -11,12 +11,12 @@
       :style="$q.dark.isActive ? 'background-image: linear-gradient(to bottom right, #512fa9, black); color: ' + darkThemeColor
         : 'background-image: linear-gradient(to bottom right, #512fa9, white); color: ' + lightThemeColor"
     >
+        <!-- reveal -->
       <q-header
-        reveal
-        :style="$store.state.themeColors.themeBGColor != '' ?
-          'background-color: ' + $store.state.themeColors.themeBGColor + '; color: ' + $store.state.themeColors.themeColor
-          : $q.dark.isActive ? 'background-color: ' + $store.state.themeColors.darkThemeBGColor + '; color: ' + $store.state.themeColors.darkThemeColor
-            : 'background-color: ' + $store.state.themeColors.lightThemeBGColor + '; color: ' + $store.state.themeColors.lightThemeColor"
+        :style="$store.state.colors.themeBGColor != '' ?
+          'background-color: ' + $store.state.colors.themeBGColor + '; color: ' + $store.state.colors.themeColor
+          : $q.dark.isActive ? 'background-color: ' + $store.state.colors.darkThemeBGColor + '; color: ' + $store.state.colors.darkThemeColor
+            : 'background-color: ' + $store.state.colors.lightThemeBGColor + '; color: ' + $store.state.colors.lightThemeColor"
       >
         <!-- class="bg-grey-10" -->
         <div class="row no-wrap justify-center">
@@ -36,10 +36,10 @@
             <!-- style="max-width: 300px" -->
             <q-tabs class="row justify-center" no-caps
             >
-                <!-- :style="$store.state.themeColors.themeBGColor != '' ?
-                  'background-color: ' + $store.state.themeColors.themeBGColor + '; color: ' + $store.state.themeColors.themeColor
-                  : $q.dark.isActive ? 'background-color: ' + $store.state.themeColors.darkThemeBGColor + '; color: ' + $store.state.themeColors.darkThemeColor
-                    : 'background-color: ' + $store.state.themeColors.lightThemeBGColor + '; color: ' + $store.state.themeColors.lightThemeColor" -->
+                <!-- :style="$store.state.colors.themeBGColor != '' ?
+                  'background-color: ' + $store.state.colors.themeBGColor + '; color: ' + $store.state.colors.themeColor
+                  : $q.dark.isActive ? 'background-color: ' + $store.state.colors.darkThemeBGColor + '; color: ' + $store.state.colors.darkThemeColor
+                    : 'background-color: ' + $store.state.colors.lightThemeBGColor + '; color: ' + $store.state.colors.lightThemeColor" -->
               <!-- style="border-top-left-radius: 0px;
                 border-top-right-radius: 0px;
                 border-bottom-left-radius: 5px;
@@ -382,10 +382,10 @@
         container
         elevated
         style="height: 250px"
-        :style="$store.state.themeColors.themeBGColor != '' ?
-          'background-color: ' + $store.state.themeColors.themeBGColor + '; color: ' + $store.state.themeColors.themeColor
-          : $q.dark.isActive ? 'background-color: ' + $store.state.themeColors.darkThemeBGColor + '; color: ' + $store.state.themeColors.darkThemeColor
-            : 'background-color: ' + $store.state.themeColors.lightThemeBGColor + '; color: ' + $store.state.themeColors.lightThemeColor"
+        :style="$store.state.colors.themeBGColor != '' ?
+          'background-color: ' + $store.state.colors.themeBGColor + '; color: ' + $store.state.colors.themeColor
+          : $q.dark.isActive ? 'background-color: ' + $store.state.colors.darkThemeBGColor + '; color: ' + $store.state.colors.darkThemeColor
+            : 'background-color: ' + $store.state.colors.lightThemeBGColor + '; color: ' + $store.state.colors.lightThemeColor"
       >
         <q-toolbar class="q-pa-lg">
           <img class="footer-logo" :src="$q.dark.isActive ? require('../assets/your-trans-5.png') : require('../assets/your-trans-9.png')">

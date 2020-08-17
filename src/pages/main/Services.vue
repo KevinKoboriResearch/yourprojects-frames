@@ -14,11 +14,20 @@
           <q-card v-if="crep" class="q-pa-md col-xs-12 col-sm-6 col-md-4">
             heey
           </q-card>
-        <li :class="crep ? 'q-pa-md col-xs-12 col-sm-6 col-md-4' : 'q-pa-md col-xs-12 col-sm-12 col-md-12'">
+        <li :class="crep ? 'row q-pa-md col-xs-12 col-sm-6 col-md-4' : 'row q-pa-md col-xs-12 col-sm-12 col-md-12'">
           <!-- <img v-if="crep" src="../../assets/images/01_iron_man_2.jpg" alt="Iron Man 2" /> -->
+        <div class="col-1">oisdsoisdsoisdsoisdsoisdsoisdsoisdsoisdsoisdsoisdsoisdsoisdsoisdsoisdsoisds
+          <div id="mac2-preview" class="platform-mac mat-only">
+          <iframe id="mac2-iframe" frameborder="0" :src="'http://localhost:8080/#' + this.$route.fullPath"/>
+          <!-- <iframe>oi</iframe> -->
+        </div>
+        </div>
+        <div class="col-11">
+
         <div id="mac2-preview" class="platform-mac mat-only">
           <iframe id="mac2-iframe" frameborder="0" :src="'http://localhost:8080/#' + this.$route.fullPath"/>
           <!-- <iframe>oi</iframe> -->
+        </div>
         </div>
         </li>
         <li class="q-pa-md col-xs-12 col-sm-12 col-md-6">
@@ -114,7 +123,7 @@ export default {
   -webkit-box-shadow:0 3px 10px #888;
   -webkit-transition-property: transform;
   -webkit-transition-duration: 1s;
-  margin: 0 0 0 25vw;
+  margin: 0 0 0 20vw;
 }
 #movieposters li:hover #mac2-preview {
   -webkit-transform: rotateY(0deg);
