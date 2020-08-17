@@ -62,10 +62,18 @@ js to vuejs:
 - https://css-tricks.com/making-the-move-from-jquery-to-vue/
 
 tabindex="-1"
-    @keydown.meta.187.capture.prevent.stop @keydown.meta.107.capture.prevent.stop
-    @keydown.meta.189.capture.prevent.stop @keydown.meta.109.capture.prevent.stop
-    @keydown.ctrl.187.capture.prevent.stop @keydown.ctrl.107.capture.prevent.stop
-    @keydown.ctrl.189.capture.prevent.stop @keydown.ctrl.109.capture.prevent.stop
+  @keydown.meta.187.capture.prevent.stop @keydown.meta.107.capture.prevent.stop
+  @keydown.meta.189.capture.prevent.stop @keydown.meta.109.capture.prevent.stop
+  @keydown.ctrl.187.capture.prevent.stop @keydown.ctrl.107.capture.prevent.stop
+  @keydown.ctrl.189.capture.prevent.stop @keydown.ctrl.109.capture.prevent.stop
+
+animations:
+- https://morioh.com/p/cf29b5e16876
+- https://madewithvuejs.com/vue-resize
+- https://github.com/David-Desmaisons/Vue.resize?ref=madewithvuejs.com
+- https://madewithvuejs.com/vi-ui
+- https://www.vuescript.com/vue-plugin-create-fullscreen-scrolling-websites-ks-vue-fullpage/
+- https://github.com/river-lee/vue-fullpage
 
 <!-- <q-icon class="text-grey-9" name="mdi-google-nearby"></q-icon> -->
 <!-- <q-icon class="text-grey-9" name="mdi-record"></q-icon> -->

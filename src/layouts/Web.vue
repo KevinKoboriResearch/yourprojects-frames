@@ -8,16 +8,20 @@
     @keydown.ctrl.189.capture.prevent.stop @keydown.ctrl.109.capture.prevent.stop -->
     <q-layout
       view="lHr LpR lfr"
-      :style="$q.dark.isActive ? 'background-image: linear-gradient(to bottom right, black, #512fa9); color: ' + darkThemeColor
+      :style="$q.dark.isActive ? 'background-image: linear-gradient(to bottom right, #512fa9, black); color: ' + darkThemeColor
         : 'background-image: linear-gradient(to bottom right, #512fa9, white); color: ' + lightThemeColor"
     >
       <q-header
-        class="transparent"
         reveal
+        :style="$store.state.themeColors.themeBGColor != '' ?
+          'background-color: ' + $store.state.themeColors.themeBGColor + '; color: ' + $store.state.themeColors.themeColor
+          : $q.dark.isActive ? 'background-color: ' + $store.state.themeColors.darkThemeBGColor + '; color: ' + $store.state.themeColors.darkThemeColor
+            : 'background-color: ' + $store.state.themeColors.lightThemeBGColor + '; color: ' + $store.state.themeColors.lightThemeColor"
       >
-        <div class="row justify-center">
+        <!-- class="bg-grey-10" -->
+        <div class="row no-wrap justify-center">
           <q-btn
-            v-if="windowWidth >= 470"
+            v-if="$store.state.window.windowWidth >= 500"
             @click="left = !left"
             dense
             flat
@@ -29,24 +33,26 @@
             </q-btn>
             <q-space/>
           <div class="justify-center">
+            <!-- style="max-width: 300px" -->
             <q-tabs class="row justify-center" no-caps
-              style="border-top-left-radius: 0px;
+            >
+                <!-- :style="$store.state.themeColors.themeBGColor != '' ?
+                  'background-color: ' + $store.state.themeColors.themeBGColor + '; color: ' + $store.state.themeColors.themeColor
+                  : $q.dark.isActive ? 'background-color: ' + $store.state.themeColors.darkThemeBGColor + '; color: ' + $store.state.themeColors.darkThemeColor
+                    : 'background-color: ' + $store.state.themeColors.lightThemeBGColor + '; color: ' + $store.state.themeColors.lightThemeColor" -->
+              <!-- style="border-top-left-radius: 0px;
                 border-top-right-radius: 0px;
                 border-bottom-left-radius: 5px;
-                border-bottom-right-radius: 5px;"
-              :style="$q.dark.isActive ?
-                'background-color: ' + darkThemeBGColor + '; color: ' + darkThemeColor
-                : 'background-color: ' + lightThemeBGColor + '; color: ' + lightThemeColor"
-            >
-              <div @click="tab = 'home'" class="col q-pa-none">
+                border-bottom-right-radius: 5px;" -->
+              <div @click="tab = 'home'" class="col">
                 <q-route-tab label="Início" to="/"/>
               </div>
-              <div @click="tab = 'about'" class="col q-pa-none">
+              <div @click="tab = 'about'" class="col">
                 <q-route-tab label="Sobre" to="/about"/>
               </div>
+              <!-- <div class="col"> -->
                 <q-btn @click="mainArea == false ? (toggleZoomScreen(), mainArea = !mainArea)
                   : tab == 'yourprojects' ? mainArea = !mainArea : tab = 'yourprojects', toggleZoomScreen()" size="18.5px" flat
-                  class="col q-pa-none"
                   style="border-top-left-radius: 0px;
                     border-top-right-radius: 0px;
                     border-bottom-left-radius: 0px;
@@ -54,17 +60,18 @@
                 >
                   <img class="img-logo" :src="$q.dark.isActive ? require('../assets/your-trans-11.png') : require('../assets/your-trans-10.png')">
                 </q-btn>
-              <div @click="tab = 'services'" class="col q-pa-none">
+                <!-- </div> -->
+              <div @click="tab = 'services'" class="col">
                 <q-route-tab label="Servicos" to="/services"/>
               </div>
-              <div @click="tab = 'doubts'" class="col q-pa-none">
+              <div @click="tab = 'doubts'" class="col">
                 <q-route-tab label="Dúvidas" to="/doubts"/>
               </div>
             </q-tabs>
           </div>
             <q-space/>
             <q-btn
-            v-if="windowWidth >= 470"
+            v-if="$store.state.window.windowWidth >= 500"
             @click="right = !right"
             dense
             flat
@@ -76,11 +83,8 @@
             </q-btn>
         </div>
       </q-header>
+      <!-- <WallE/> -->
       <q-drawer flat content-class="" bordered :width="250" v-model="left" side="left">
-        <!-- <q-color no-header default-view="palette" :palette="palette" v-model="lightThemeBGColor" />
-        <q-color no-header default-view="palette" :palette="palette" v-model="lightThemeColor" /> -->
-        <q-color no-header default-view="palette" :palette="palette" v-model="darkThemeBGColor" />
-        <q-color no-header default-view="palette" :palette="palette" v-model="darkThemeColor" />
         <LeftDrawer />
       </q-drawer>
       <q-drawer content-class="" bordered mini :width="65" v-model="right" side="right">
@@ -295,7 +299,7 @@
         </div>
         <DynamicWhatsapp />
         <DynamicThemeChange />
-            <q-page-sticky position="top-right" :offset="windowWidth <= 470 ? [12, 60] : [12, 12]">
+            <q-page-sticky position="top-right" :offset="$store.state.window.windowWidth <= 500 ? [12, 60] : [12, 12]">
       <q-btn
             @click="$q.fullscreen.toggle()"
             flat
@@ -306,7 +310,7 @@
             <q-icon :color="$q.dark.isActive ? 'white' : 'black'" :name="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"/>
           </q-btn>
     </q-page-sticky>
-        <q-page-sticky position="top-right" :offset="windowWidth <= 470 ? [14, 108] : [14, 60]">
+        <q-page-sticky position="top-right" :offset="$store.state.window.windowWidth <= 500 ? [14, 108] : [14, 60]">
       <q-btn
             @click="$q.dark.toggle()"
             flat
@@ -319,7 +323,7 @@
             <q-icon size="20px" :color="$q.dark.isActive ? 'white' : 'black'" name="mdi-compare"/>
           </q-btn>
     </q-page-sticky>
-        <q-page-sticky position="top-right" :offset="windowWidth <= 470 ? [12, 60] : [12, 12]">
+        <q-page-sticky position="top-right" :offset="$store.state.window.windowWidth <= 500 ? [12, 60] : [12, 12]">
       <q-btn
             @click="$q.fullscreen.toggle()"
             flat
@@ -330,22 +334,10 @@
             <q-icon :color="$q.dark.isActive ? 'white' : 'black'" :name="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"/>
           </q-btn>
     </q-page-sticky>
-          <!-- <q-page-sticky
-          position="top-left" :offset="windowWidth <= 470 ? [12, 108] : [12, 60]">
-          <q-btn
-            @click="customColors = !customColors"
-            flat
-            padding="none" style="border-top-left-radius: 0px; border-top-right-radius: 0px;
-            border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
-            :style="'backgroud-color: ' + $q.dark.isActive ? 'white' : 'black'"
-          >
-            <q-icon :color="$q.dark.isActive ? 'white' : 'black'" name="mdi-water"/>
-          </q-btn>
-        </q-page-sticky> -->
          <q-page-sticky
           position="top-left" :offset="[12, 12]">
           <q-btn
-            v-if="windowWidth <= 470"
+            v-if="$store.state.window.windowWidth <= 500"
             @click="left = !left"
             dense
             flat
@@ -359,7 +351,7 @@
          <q-page-sticky
           position="top-right" :offset="[12, 12]">
            <q-btn
-            v-if="windowWidth <= 470"
+            v-if="$store.state.window.windowWidth <= 500"
             @click="right = !right"
             dense
             flat
@@ -372,7 +364,7 @@
             </q-btn>
         </q-page-sticky>
         <q-page-sticky
-          position="top-left" :offset="windowWidth <= 470 ? [12, 60] : [12, 12]">
+          position="top-left" :offset="$store.state.window.windowWidth <= 500 ? [12, 60] : [12, 12]">
           <q-btn
             @click="mainArea = !mainArea, toggleZoomScreen()"
             flat
@@ -383,15 +375,17 @@
             <q-icon :color="$q.dark.isActive ? 'white' : 'black'" :name="mainArea ? 'close' : 'mdi-tablet-cellphone'"/>
           </q-btn>
         </q-page-sticky>
+        <!-- <WallE/> -->
       </q-page-container>
       <!-- <q-footer
         v-if="!mainArea"
         container
         elevated
         style="height: 250px"
-        :style="$q.dark.isActive ?
-          'background-color: ' + darkThemeBGColor + '; color: ' + darkThemeColor :
-          'background-color: ' + lightThemeBGColor + '; color: ' + lightThemeColor"
+        :style="$store.state.themeColors.themeBGColor != '' ?
+          'background-color: ' + $store.state.themeColors.themeBGColor + '; color: ' + $store.state.themeColors.themeColor
+          : $q.dark.isActive ? 'background-color: ' + $store.state.themeColors.darkThemeBGColor + '; color: ' + $store.state.themeColors.darkThemeColor
+            : 'background-color: ' + $store.state.themeColors.lightThemeBGColor + '; color: ' + $store.state.themeColors.lightThemeColor"
       >
         <q-toolbar class="q-pa-lg">
           <img class="footer-logo" :src="$q.dark.isActive ? require('../assets/your-trans-5.png') : require('../assets/your-trans-9.png')">
@@ -407,6 +401,7 @@ import LeftDrawer from '../components/drawers/LeftDrawer'
 import RightDrawer from '../components/drawers/RightDrawer'
 import DynamicWhatsapp from '../components/whatsapp/DynamicWhatsapp'
 import DynamicThemeChange from '../components/whatsapp/DynamicThemeChange'
+// import WallE from '../components/animations/WallE'
 
 export default {
   components: {
@@ -414,6 +409,7 @@ export default {
     RightDrawer,
     DynamicWhatsapp,
     DynamicThemeChange
+    // WallE
   },
   data () {
     return {
@@ -422,43 +418,14 @@ export default {
       mainAreaVal: true,
       left: false,
       right: false,
-      showWallE: true,
+      // showWallE: true,
       ecoSystem: 'ios',
       frameWebSiteVal: 'http://www.yourprojects.net/#',
       dialog: false,
-      maximizedToggle: true,
-      darkThemeBGColor: '#242424FF',
-      darkThemeColor: '#FFFFFFFF',
-      // lightThemeBGColor: '#FFFFFFFF',
-      // lightThemeColor: '#242424FF',
-      // customColors: false,
-      // palette: ['#FFFFFFFF', '#F2C037FF', '#21BA45FF', '#26A69AFF', '#31CCECFF', '#1976D2FF', '#e600e2FF', '#512fa9FF', '#aa0000FF', '#242424FF'],
-      windowWidth: window.innerWidth,
-      windowHeight: window.innerHeight,
-      txt: ''
+      maximizedToggle: true
     }
-  },
-  watch: {
-    windowHeight (newHeight, oldHeight) {
-      this.txt = `it changed to ${newHeight} from ${oldHeight}`
-    },
-    windowWidth (newWidth, oldWidth) {
-      this.txt = `it changed to ${newWidth} from ${oldWidth}`
-    }
-  },
-  mounted () {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.onResize)
-    })
-  },
-  beforeDestroy () {
-    window.removeEventListener('resize', this.onResize)
   },
   methods: {
-    onResize () {
-      this.windowHeight = window.innerHeight
-      this.windowWidth = window.innerWidth
-    },
     keyboardEvent (e) {
       if (e.which === 13) {
         this.tabVal = 'oi'

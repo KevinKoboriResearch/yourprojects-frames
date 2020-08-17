@@ -13,8 +13,8 @@
       </q-btn>
     </q-page-sticky>
     <q-dialog v-model="dialog" persistent :position="position">
-      <q-card class="bg-teal-9" style="min-width: 310px; min-height: 200px; background-color: #cdf5c9ff;
-        border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;">
+      <q-card style="min-width: 310px; min-height: 200px; border-top-left-radius: 7px;
+        border-top-right-radius: 7px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;">
         <q-card-section class="row q-pa-none bg-teal-9">
           <div @click="openInNewWindow()" class="q-px-md q-py-xs">
             <div class="text-subtitle1 text-white text-weight-bold">Your Projects</div>

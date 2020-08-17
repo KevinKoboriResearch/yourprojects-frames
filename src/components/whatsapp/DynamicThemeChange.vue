@@ -2,9 +2,9 @@
 <template>
   <div>
     <q-page-sticky
-      position="top-left" :offset="windowWidth <= 470 ? [12, 108] : [40, 60]">
+      position="top-left" :offset="$store.state.window.windowWidth <= 500 ? [12, 108] : [12, 60]">
       <q-btn
-        @click="open('left')"
+        @click="dialog = !dialog"
         flat
         padding="none" style="border-top-left-radius: 0px; border-top-right-radius: 0px;
         border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
@@ -13,63 +13,43 @@
         <q-icon :color="$q.dark.isActive ? 'white' : 'black'" name="mdi-water"/>
       </q-btn>
     </q-page-sticky>
-    <q-dialog v-model="dialog" :position="position">
-      <q-card class="bg-teal-9" style="min-width: 310px; min-height: 200px; background-color: #cdf5c9ff;
-        border-top-left-radius: 0px; border-top-right-radius: 5px; border-bottom-left-radius: 0px; border-bottom-right-radius: 5px;">
-        <q-card-section class="row q-pa-none bg-teal-9">
-          <q-color no-header default-view="palette" :palette="palette" v-model="lightThemeBGColor" />
-          <q-color no-header default-view="palette" :palette="palette" v-model="lightThemeColor" />
-          <q-color no-header default-view="palette" :palette="palette" v-model="darkThemeBGColor" />
-          <q-color no-header default-view="palette" :palette="palette" v-model="darkThemeColor" />
-        </q-card-section>
-      </q-card>
-    </q-dialog>
+    <q-page-sticky v-if="dialog"
+      position="top-left" :offset="$store.state.window.windowWidth <= 500 ? [50, 108] : [50, 60]">
+      <q-color no-header default-view="palette" :palette="palette" v-model="themeBGColor"
+        style="border-top-left-radius: 0px; border-top-right-radius: 0px;
+          border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;" />
+        <q-color no-header default-view="palette" :palette="palette" v-model="themeColor"
+        style="border-top-left-radius: 0px; border-top-right-radius: 0px;
+          border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"/>
+    </q-page-sticky>
   </div>
 </template>
 
 <script>
 export default {
   data: () => ({
-    hints: true,
     dialog: false,
-    position: 'top',
-    shadowVal: false,
-    shadowElevation: 'shadow-1',
-    shadowVal2: false,
-    shadowElevation2: 'shadow-1',
+    themeBGColorVal: '#242424FF',
+    themeColorVal: '#FFFFFFFF',
     palette: ['#FFFFFFFF', '#F2C037FF', '#21BA45FF', '#26A69AFF', '#31CCECFF', '#1976D2FF', '#e600e2ff', '#512fa9ff', '#aa0000ff', '#242424ff']
   }),
-  methods: {
-    open (position) {
-      this.position = position
-      this.dialog = true
-    }
-  },
   computed: {
-    shadow: {
+    themeBGColor: {
       get () {
-        return this.shadowVal
+        return this.themeBGColorVal
       },
       set (val) {
-        this.shadowVal = val
-        if (val === true) {
-          this.shadowElevation = 'shadow-4'
-        } else {
-          this.shadowElevation = 'shadow-1'
-        }
+        this.$store.commit('themeColors/updateThemeBGColor', val)
+        this.themeBGColorVal = val
       }
     },
-    shadow2: {
+    themeColor: {
       get () {
-        return this.shadowVal2
+        return this.themeColorVal
       },
       set (val) {
-        this.shadowVal2 = val
-        if (val === true) {
-          this.shadowElevation2 = 'shadow-4'
-        } else {
-          this.shadowElevation2 = 'shadow-1'
-        }
+        this.$store.commit('themeColors/updateThemeColor', val)
+        this.themeColorVal = val
       }
     }
   }

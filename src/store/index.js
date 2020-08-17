@@ -4,6 +4,8 @@ import Vuex from 'vuex'
 import button from './button'
 import showcase from './showcase'
 import walle from './walle'
+import themeColors from './theme-colors'
+import window from './window'
 
 Vue.use(Vuex)
 
@@ -21,7 +23,9 @@ export default function (/* { ssrContext } */) {
     modules: {
       button,
       showcase,
-      walle
+      walle,
+      themeColors,
+      window
     },
 
     // enable strict mode (adds overhead!)

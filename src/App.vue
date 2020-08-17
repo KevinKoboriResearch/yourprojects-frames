@@ -5,7 +5,27 @@
 </template>
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+    }
+  },
+  mounted () {
+    this.$store.commit('window/updateWindowWidth', window.innerWidth)
+    this.$store.commit('window/updateWindowHeight', window.innerHeight)
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.onResize)
+  },
+  methods: {
+    onResize () {
+      this.$store.commit('window/updateWindowWidth', window.innerWidth)
+      this.$store.commit('window/updateWindowHeight', window.innerHeight)
+    }
+  }
 }
 </script>
 
