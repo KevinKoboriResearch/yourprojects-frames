@@ -75,6 +75,9 @@ animations:
 - https://www.vuescript.com/vue-plugin-create-fullscreen-scrolling-websites-ks-vue-fullpage/
 - https://github.com/river-lee/vue-fullpage
 
+quasar:
+- https://techformist.com/using-vue-plugins-quasar/
+
 <!-- <q-icon class="text-grey-9" name="mdi-google-nearby"></q-icon> -->
 <!-- <q-icon class="text-grey-9" name="mdi-record"></q-icon> -->
 <!-- <q-space/> -->

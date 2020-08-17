@@ -6,7 +6,7 @@
   <div>
     <!-- <div class="transparent q-pa-md text-justify row wrap justify-center items-start content-start"> -->
       <!-- <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px"> -->
-    <!-- <h1>3d animation using pure CSS3<small>Movie Posters Example</small></h1> -->
+    <h1>3d animation using pure CSS3<small>Movie Posters Example</small></h1>
       <lu id="movieposters" class="transparent q-pa-md text-justify row wrap justify-center items-start content-start">
           <q-btn @click="crep = !crep">
             oi
@@ -143,9 +143,9 @@ export default {
 ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{margin:0; padding:0;}
 
 /* HTML ELEMENTS */
-/* body { background-color:#deddcd; font:14px/21px Arial,Helvetica,sans-serif; }
+body { background-color:#deddcd; font:14px/21px Arial,Helvetica,sans-serif; }
 h1 { font: bold 65px/60px Helvetica, Arial, Sans-serif; text-align: center; color: #eee; text-shadow: 0px 2px 6px #333; }
-h1 small{ font-size: 20px; text-transform:uppercase; letter-spacing: 14px; display: block; color: #000; } */
+h1 small{ font-size: 20px; text-transform:uppercase; letter-spacing: 14px; display: block; color: #000; }
 h2 a { display: block; text-decoration: none; margin: 0 0 30px 0; font: italic 45px Georgia, Times, Serif;  text-align: center; color: #bfe1f1; text-shadow: 0px 2px 6px #333; }
 h2 a:hover { color: #90bcd0; }
 
