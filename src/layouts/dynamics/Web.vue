@@ -19,6 +19,7 @@
           : $q.dark.isActive ? 'background-color: ' + $store.state.colors.darkThemeBGColor + '; color: ' + $store.state.colors.darkThemeColor
             : 'background-color: ' + $store.state.colors.lightThemeBGColor + '; color: ' + $store.state.colors.lightThemeColor"
       >
+        <!-- class="bg-grey-10" -->
         <div class="row no-wrap justify-center">
           <q-btn
             v-if="$store.state.window.windowWidth >= 500"
@@ -33,16 +34,26 @@
             </q-btn>
             <q-space/>
           <div class="justify-center">
+            <!-- style="max-width: 300px" -->
             <q-tabs class="row justify-center" no-caps
             >
-              <div @click="tab = 'home', $store.commit('colors/updateThemeBGColor', '#99CDFF')" class="col">
+                <!-- :style="$store.state.colors.themeBGColor != '' ?
+                  'background-color: ' + $store.state.colors.themeBGColor + '; color: ' + $store.state.colors.themeColor
+                  : $q.dark.isActive ? 'background-color: ' + $store.state.colors.darkThemeBGColor + '; color: ' + $store.state.colors.darkThemeColor
+                    : 'background-color: ' + $store.state.colors.lightThemeBGColor + '; color: ' + $store.state.colors.lightThemeColor" -->
+              <!-- style="border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;" -->
+              <div @click="tab = 'home'" class="col">
                 <q-route-tab label="Início" to="/"/>
               </div>
-              <div @click="tab = 'about', $store.commit('colors/updateThemeBGColor', '#2E2E2E')" class="col">
+              <div @click="tab = 'about'" class="col">
                 <q-route-tab label="Sobre" to="/about"/>
               </div>
-                <q-btn @click="mainArea == false ? (toggleZoomScreen(), mainArea = !mainArea, $store.commit('colors/updateThemeBGColor', '#FFFA81'))
-                  : tab == 'yourprojects' ? mainArea = !mainArea : tab = 'yourprojects', toggleZoomScreen(), $store.commit('colors/updateThemeBGColor', '#FFFA81')" size="18.5px" flat
+              <!-- <div class="col"> -->
+                <q-btn @click="mainArea == false ? (toggleZoomScreen(), mainArea = !mainArea)
+                  : tab == 'yourprojects' ? mainArea = !mainArea : tab = 'yourprojects', toggleZoomScreen()" size="18.5px" flat
                   style="border-top-left-radius: 0px;
                     border-top-right-radius: 0px;
                     border-bottom-left-radius: 0px;
@@ -50,10 +61,11 @@
                 >
                   <img class="img-logo" :src="$q.dark.isActive ? require('../assets/your-trans-11.png') : require('../assets/your-trans-10.png')">
                 </q-btn>
-              <div @click="tab = 'services', $store.commit('colors/updateThemeBGColor', '#E0EFF1')" class="col">
+                <!-- </div> -->
+              <div @click="tab = 'services'" class="col">
                 <q-route-tab label="Servicos" to="/services"/>
               </div>
-              <div @click="tab = 'doubts', $store.commit('colors/updateThemeBGColor', '#E0EFF1')" class="col">
+              <div @click="tab = 'doubts'" class="col">
                 <q-route-tab label="Dúvidas" to="/doubts"/>
               </div>
             </q-tabs>
@@ -250,7 +262,7 @@
             </q-tab-panels>
           </div>
         </transition>
-        <div v-if="!mainArea">
+        <div v-if="mainArea == false">
           <!-- <div v-if="tab == 'home'">
             <transition name="fade">
               <router-view />

@@ -1,13 +1,11 @@
 <template>
-     <div>
-        <template>
-            <div class="">
+<div class="">
                 <div class="button-group">
                     <button type="button" class="disabled-btn" @click="setDisabled()">Disabled move</button>
                     <button type="button" :class="{active:index ==0}" @click="moveTo(0)">first page</button>
                     <button type="button" :class="{active:index ==1}" @click="moveTo(1)">Second page</button>
                     <button type="button" :class="{active:index ==2}" @click="moveTo(2)">Third page</button>
-                    <!-- <button type="button" v-for="btn in pageNum" :class="{active:index == btn + 2}" @click="moveTo(btn+2)">page {{btn+2}}</button> -->
+                    <button type="button" v-for="btn in pageNum" :class="{active:index == btn + 2}" @click="moveTo(btn+2)">page {{btn+2}}</button>
                     <button type="button" @click="showPage()">add page</button>
                 </div>
                 <div class="fullpage-vertical">
@@ -33,11 +31,11 @@
                                     <p v-animate="{value: 'bounceInDown'}">horizontal 2</p>
                                 </div>
                             </div>
-                            <!-- <div class="fullpage-pagination">
+                            <div class="fullpage-pagination">
                                 <div class="fullpage-pagination-bullet"
-                                    v-for="(i,index) in [0,1]"
+                                    :v-for="(i,index) in [0,1]"
                                     :class="{'fullpage-pagination-bullet__active':active2==index}"></div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                     <div class="page-3 page">
@@ -48,19 +46,17 @@
                         <p class="part-3" v-animate="{value: 'bounceInDown', delay: 600}">vue-fullpage</p>
                         <p class="part-3" v-animate="{value: 'zoomInDown', delay: 900}">vue-fullpage</p>
                     </div>
-                    <!-- <div class="page-2 page" v-for="page in pageNum">
+                    <div class="page-2 page" :v-for="page in pageNum">
                         <h2 class="part-2" v-animate="{value: 'bounceInRight'}">page {{page}}</h2>
-                    </div> -->
+                    </div>
                 </div>
-                <!-- <div class="fullpage-pagination">
+                <div class="fullpage-pagination">
                     <div class="fullpage-pagination-bullet"
-                        v-for="(i,indx) in [0,1,2]"
+                        :v-for="(i,indx) in [0,1,2]"
                         :class="{'fullpage-pagination-bullet__active':index==indx}"></div>
-                </div> -->
+                </div>
                 </div>
             </div>
-        </template>
-    </div>
 </template>
 
 <script>
@@ -70,93 +66,46 @@ export default {
     return {
       index: 0,
       pageNum: 0,
-      disabled: false,
       opts: {
         start: 0,
         dir: 'v',
         loop: false,
         duration: 300,
-        beforeChange (ele, current, next) {
+        overflow: 'scroll',
+        beforeChange: function (elem, current, next) {
           console.log('before', current, next)
-          that.index = next
         },
-        afterChange (ele, current) {
+        afterChange: function (elem, current) {
           that.index = current
           console.log('after', current)
         }
-      },
-      horizontalOpts: {
-        start: 0,
-        dir: 'h',
-        loop: false,
-        afterChange (ele, current) {
-          that.active2 = current
-        }
-      },
-      active2: 0
+      }
     }
   },
   methods: {
-    moveTo (index) {
-      this.$refs.fullpage.$fullpage.moveTo(index, true, true)
+    moveTo: function (index) {
+      const $fullpage = this.$refs.fullpage.$fullpage
+      if (index < this.index) {
+        $fullpage.pageEles[this.index].scrollTo(0, 0)
+      } else {
+        $fullpage.pageEles[this.index].scrollTo(0, $fullpage.pageEles[this.index].scrollHeight)
+      }
+      $fullpage.moveTo(index, true)
+      this.index = index
     },
-    showPage () {
+    showPage: function () {
       this.pageNum++
       this.$refs.fullpage.$fullpage.$update()
-    },
-    setDisabled () {
-      this.disabled = !this.disabled
-      this.$refs.fullpage.$fullpage.setDisabled(this.disabled)
     }
   }
 }
 </script>
 
-<style>
-* {
-    -webkit-overflow-scrolling: touch;
-}
-.fullpage-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
-.fullpage-wp {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-}
-.fullpage-wp.anim {
-    transform: translate3d(0, 0, 0);
-    -webkit-transition: all 500ms ease-out 0s;
-    transition: all 500ms ease-out 0s;
-}
-.fullpage-wp.fullpage-wp-h {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-}
-.page {
-    box-sizing: border-box;
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-    overflow: hidden;
-}
-.animated {
-    opacity: 1;
-}
-
-    body {
+<style type="text/css" media="screen">
+body {
         margin: 0;
     }
+
 
     .page {
         display: block;
@@ -259,6 +208,7 @@ export default {
     .fullpage-vertical > .fullpage-pagination > .fullpage-pagination-bullet__active{
         background: #4D7CFE;
     }
+
 
     .button-group button.active {
         background: rgba(0, 0, 0, .5);

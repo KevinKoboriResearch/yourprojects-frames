@@ -1,174 +1,268 @@
 <template>
-<div>
-  <!-- <div class="fullpage-container bg-black">
-  <div class="fullpage-wp text-center bg-black" v-fullpage="opts" ref="example">
-    <div class="page-1 page q-pa-xl bg-deep-purple-8">
-      <p class="part-3" v-animate="{value: 'bounceInLeft', delay: 0}">fullpage-vue</p>
-      <p class="part-3" v-animate="{value: 'bounceInRight', delay: 600}">fullpage-vue</p>
-      <p class="part-3" v-animate="{value: 'zoomInDown', delay: 1200}">fullpage-vue</p>
-    </div>
-    <div class="page-2 page q-pa-xl bg-deep-purple-7">
-      <p class="part-3" v-animate="{value: 'bounceInLeft', delay: 0}">fullpage-vue</p>
-      <p class="part-3" v-animate="{value: 'bounceInRight', delay: 600}">fullpage-vue</p>
-      <p class="part-3" v-animate="{value: 'zoomInDown', delay: 1200}">fullpage-vue</p>
-    </div>
-    <div class="page-3 page q-pa-xl bg-deep-purple-6">
-      <p class="part-3" v-animate="{value: 'bounceInLeft', delay: 0}">fullpage-vue</p>
-      <p class="part-3" v-animate="{value: 'bounceInRight', delay: 600}">fullpage-vue</p>
-      <p class="part-3" v-animate="{value: 'zoomInDown', delay: 1200}">fullpage-vue</p>
-    </div>
-  </div>
-  <q-btn @click="moveNext">next</q-btn>
-  </div> -->
-  <!-- <q-btn
-    :v-for="btn in pageNum"
-    :class="{active:index == btn + 2}"
-    @click="moveTo(btn+2)">page {{btn+2}}</q-btn>
-  <q-btn type="button" @click="showPage()">add page</q-btn>
-
-  <div class="page-2 page" :v-for="page in pageNum">
-    <h2 class="part-2" v-animate="{value: 'bounceInRight'}">page {{page}}</h2>
-  </div> -->
-  <!-- <div class="fullpage-container bg-black">
-  <div class="fullpage-wp text-center bg-black" v-fullpage="opts" ref="example">
-    <div class="page-1 page q-pa-xl bg-green">
-      <lu id="movieposters" class="transparent q-pa-md text-justify row wrap justify-center items-start content-start">
-          <li class="q-pa-md col-xs-12 col-sm-12 col-md-12">
-        <div id="mac2-preview" class="platform-mac mat-only">
-          <iframe id="mac2-iframe" frameborder="0" :src="'http://localhost:8080/#' + this.$route.fullPath"/>
-        </div>
-        </li>
-      </lu>
-    </div>
-    <div class="page-2 page q-pa-xl bg-blue">
-    </div>
-    <div class="page-3 page q-pa-xl bg-red">
-      <p class="part-3" v-animate="{value: 'bounceInLeft', delay: 0}">fullpage-vue</p>
-      <p class="part-3" v-animate="{value: 'bounceInRight', delay: 600}">fullpage-vue</p>
-      <p class="part-3" v-animate="{value: 'zoomInDown', delay: 1200}">fullpage-vue</p>
-    </div>
-  </div>
-  <q-btn @click="moveNext">next</q-btn>
-</div> -->
-<div class="fullpage-container">
-                <div class="button-group">
-                    <button type="button" :class="{active:index ==0}" @click="moveTo(0)">first page</button>
-                    <button type="button" :class="{active:index ==1}" @click="moveTo(1)">Second page</button>
-                    <button type="button" :class="{active:index ==2}" @click="moveTo(2)">Third page</button>
-                </div>
+            <div class="fullpage-container text-center">
+              <!-- <div class=" q-pa-xl text-center"> -->
+                <!-- <q-btn> -->
+                <!-- </q-btn> -->
+                <!-- <br><br><br><br><br><br> -->
+                  <!-- <div>
+                    <q-btn :class="{active:index ==0}" @click="moveTo(0)">first page</q-btn>
+                    <q-btn :class="{active:index ==1}" @click="moveTo(1)">Second page</q-btn>
+                    <q-btn :class="{active:index ==2}" @click="moveTo(2)">Third page</q-btn>
+                  </div> -->
                 <div class="fullpage-wp" v-fullpage="opts" ref="fullpage">
-                    <div class="page-1 page">
-                        <h1 class="part-1" v-animate="{value: 'bounceInLeft'}">vue-fullpage.js </h1>
+                    <div class="page-1 page page-scroll" style="background-image: linear-gradient(purple, purple);">
+                        <h1 class="part-1" v-animate="{value: 'bounceInLeft'}">YOUR PROJECTS </h1>
                         <h2 v-animate="{value: 'bounceInLeft'}">scroll in pages</h2>
                         <h3 class="" v-animate="{value: 'bounceInLeft'}">A sigle-page scroll plugin based on vue@2.x,support for mobile and PC .</h3>
                     </div>
-                    <div class="page-2 page">
-                        <h2 class="part-2" v-animate="{value: 'bounceInRight'}">Easy to use plugin</h2>
-                        <ul v-animate="{value: 'bounceInRight'}">
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li>text</li>
-                        </ul>
+                    <div class="page-2 page page-scroll" style="background-image: linear-gradient(grey, grey);">
+                        <!-- <h2 class="part-2">Easy to use plugin</h2> -->
+                        <div v-animate="{value: 'bounceInRight'}">
+                          <div class="transparent q-pa-md text-justify row wrap justify-center items-start content-start" v-animate="{value: 'bounceInLeft'}">
+                            <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
+                                <q-card>
+                                  <img :src="require('../../assets/astronauta.gif')">
+
+                                  <q-card-section>
+                                    <div class="text-overline text-orange-9">Android & iOS</div>
+                                    <div class="text-h6">Dispositivos Mobile</div>
+                                    <div class="text-subtitle2">por Kevin Kobori</div>
+                                  </q-card-section>
+
+                                  <q-card-section class="q-pt-none">
+
+                                  </q-card-section>
+
+                                  <q-card-section class="q-pt-none">
+                                    <strong>Ex: Smartphones e Tablets / iPhones e iPads.</strong>
+                                  </q-card-section>
+                                  <br>
+                                  <q-separator inset />
+
+                                  <q-card-section align="right">
+                                    <q-btn outline>Saiba Mais</q-btn>
+                                  </q-card-section>
+                                </q-card>
+                              </div>
+
+                              <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
+                                <q-card>
+                                  <img src="https://cdn.quasar.dev/img/mountains.jpg">
+
+                                  <q-card-section>
+                                    <div class="text-overline text-orange-9">Windows & Mac OSX</div>
+                                    <div class="text-h6">Sistemas Operacionais</div>
+                                    <div class="text-subtitle2">por Kevin Kobori</div>
+                                  </q-card-section>
+
+                                  <q-card-section class="q-pt-none">
+
+                                  </q-card-section>
+
+                                  <q-card-section class="q-pt-none">
+                                    <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
+                                  </q-card-section>
+
+                                  <q-separator inset />
+
+                                  <q-card-section align="right">
+                                    <q-btn outline>Saiba Mais</q-btn>
+                                  </q-card-section>
+                                </q-card>
+                              </div>
+
+                              <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
+                                <q-card>
+                                  <img src="https://cdn.quasar.dev/img/mountains.jpg">
+
+                                  <q-card-section>
+                                    <div class="text-overline text-orange-9">Chrome, Safari, Firefox...</div>
+                                    <div class="text-h6">Navegadores Web</div>
+                                    <div class="text-subtitle2">por Kevin Kobori</div>
+                                  </q-card-section>
+
+                                  <q-card-section class="q-pt-none">
+
+                                  </q-card-section>
+
+                                  <q-card-section class="q-pt-none">
+                                    <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
+                                  </q-card-section>
+
+                                  <q-separator inset />
+
+                                  <q-card-section align="right">
+                                    <q-btn outline>Saiba Mais</q-btn>
+                                  </q-card-section>
+                                </q-card>
+                              </div>
+                              <!-- <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
+                                <q-card>
+                                  <img src="https://cdn.quasar.dev/img/mountains.jpg">
+
+                                  <q-card-section>
+                                    <div class="text-overline text-orange-9">Design Externo da Página</div>
+                                    <div class="text-h6">Layouts</div>
+                                    <div class="text-subtitle2">por Kevin Kobori</div>
+                                  </q-card-section>
+
+                                  <q-card-section class="q-pt-none">
+                                    Componentes permitem você dividir a UI em partes independentes,
+                                    reutilizáveis, ou seja, trata cada parte da aplicação como um bloco isolado,
+                                    livre de outras dependências externas. Componentes são como funções JavaScript.
+                                    Eles aceitam entradas e retornam elementos VueJS que descrevem o que deve aparecer na tela.
+                                  </q-card-section>
+
+                                  <q-card-section class="q-pt-none">
+                                    <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
+                                  </q-card-section>
+
+                                  <q-separator inset />
+
+                                  <q-card-section align="right">
+                                    <q-btn outline>Saiba Mais</q-btn>
+                                  </q-card-section>
+                                </q-card>
+                              </div>
+
+                              <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
+                                <q-card>
+                                  <img src="https://cdn.quasar.dev/img/mountains.jpg">
+
+                                  <q-card-section>
+                                    <div class="text-overline text-orange-9">Design Interno da Página</div>
+                                    <div class="text-h6">Componentes</div>
+                                    <div class="text-subtitle2">por Kevin Kobori</div>
+                                  </q-card-section>
+
+                                  <q-card-section class="q-pt-none">
+                                    Componentes permitem você dividir a UI em partes independentes,
+                                    reutilizáveis, ou seja, trata cada parte da aplicação como um bloco isolado,
+                                    livre de outras dependências externas. Componentes são como funções JavaScript.
+                                    Eles aceitam entradas e retornam elementos VueJS que descrevem o que deve aparecer na tela.
+                                  </q-card-section>
+
+                                  <q-card-section class="q-pt-none">
+                                    <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
+                                  </q-card-section>
+
+                                  <q-separator inset />
+
+                                  <q-card-section align="right">
+                                    <q-btn outline>Saiba Mais</q-btn>
+                                  </q-card-section>
+                                </q-card>
+                              </div>
+
+                              <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
+                                <q-card>
+                                  <img src="https://cdn.quasar.dev/img/mountains.jpg">
+
+                                  <q-card-section>
+                                    <div class="text-overline text-orange-9">Material Design Icons</div>
+                                    <div class="text-h6">Icones</div>
+                                    <div class="text-subtitle2">por Kevin Kobori</div>
+                                  </q-card-section>
+
+                                  <q-card-section class="q-pt-none">
+                                    Componentes permitem você dividir a UI em partes independentes,
+                                    reutilizáveis, ou seja, trata cada parte da aplicação como um bloco isolado,
+                                    livre de outras dependências externas. Componentes são como funções JavaScript.
+                                    Eles aceitam entradas e retornam elementos VueJS que descrevem o que deve aparecer na tela.
+                                  </q-card-section>
+
+                                  <q-card-section class="q-pt-none">
+                                    <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
+                                  </q-card-section>
+
+                                  <q-separator inset />
+
+                                  <q-card-section align="right">
+                                    <q-btn outline>Saiba Mais</q-btn>
+                                  </q-card-section>
+                                </q-card>
+                            </div> -->
+                          </div>
+                      </div>
                     </div>
-                    <div class="page-3 page">
-                        <h2 class="" v-animate="{value: 'bounceInTop'}">Working On Tablets</h2>
+                    <div class="page-3 page page-scroll" style="background-image: linear-gradient(black, black);">
+                        <!-- <h2 class="" v-animate="{value: 'bounceInTop'}">Working On Tablets</h2>
                         <h3 class="" v-animate="{value: 'bounceInBotton'}">Designed to fit different screen sizes as well as tablet and mobile devices. </h3>
                         <p class="part-3" v-animate="{value: 'bounceInLeft', delay: 0}">vue-fullpage</p>
                         <p class="part-3" v-animate="{value: 'bounceInRight', delay: 300}">vue-fullpage</p>
                         <p class="part-3" v-animate="{value: 'bounceInDown', delay: 600}">vue-fullpage</p>
-                        <p class="part-3" v-animate="{value: 'zoomInDown', delay: 900}">vue-fullpage</p>
+                        <p class="part-3" v-animate="{value: 'zoomInDown', delay: 900}">vue-fullpage</p> -->
+                        <div class="fullpage-horizontal">
+                            <div v-fullpage="horizontalOpts" ref="fullpageHorizontal">
+                                <div class="page-4 page">
+                                    <h2 class="part-2" v-animate="{value: 'bounceInRight'}">Easy to use plugin</h2>
+                                    <p v-animate="{value: 'bounceInRight'}">nesting</p>
+                                    <p v-animate="{value: 'bounceInRight'}">
+                                        horizontal 1
+                                    </p>
+                                </div>
+                                <div class="page-5 page">
+                                    <p v-animate="{value: 'bounceInDown'}">horizontal 2</p>
+                                </div>
+                                 <div class="page-5 page">
+                                    <p v-animate="{value: 'bounceInDown'}">horizontal 3</p>
+                                </div>
+                                 <div class="page-5 page">
+                                    <p v-animate="{value: 'bounceInDown'}">horizontal 4</p>
+                                </div>
+                            </div>
+                            <!-- <div class="fullpage-pagination">
+                                <div class="fullpage-pagination-bullet"
+                                    v-for="(i,index) in [0,1]"
+                                    :class="{'fullpage-pagination-bullet__active':active2==index}"></div>
+                            </div> -->
+                        </div>
                     </div>
-                    <div class="page-2 page" :v-for="page in pageNum">
+                    <!-- <div class="page-2 page" v-for="page in pageNum">
                         <h2 class="part-2" v-animate="{value: 'bounceInRight'}">page {{page}}</h2>
-                    </div>
+                    </div> -->
                 </div>
+              <!-- </div> -->
             </div>
-</div>
 </template>
 
 <script>
 export default {
-  // data () {
-  //   return {
-  //     pageNum: 2,
-  //     crep: false,
-  //     opts: {
-  //       start: 0,
-  //       dir: 'v',
-  //       duration: 500,
-  //       beforeChange: function (currentSlideEl, currenIndex, nextIndex) {
-  //       },
-  //       afterChange: function (currentSlideEl, currenIndex) {
-  //       }
-  //     }
-  //   }
-  // },
-  // methods: {
-  //   moveNext () {
-  //     this.$refs.example.$fullpage.moveNext() // Move to the next page
-  //   },
-  //   showPage () {
-  //     this.pageNum++
-  //     this.$refs.fullpage.$fullpage.$update()
-  //   }
-  // }
+//   data () {
+//     return {
+//       pageNum: 2,
+//       crep: false,
+//       opts: {
+//         start: 0,
+//         dir: 'v',
+//         duration: 500,
+//         beforeChange: function (currentSlideEl, currenIndex, nextIndex) {
+//         },
+//         afterChange: function (currentSlideEl, currenIndex) {
+//         }
+//       }
+//     }
+//   },
+//   methods: {
+//     moveNext () {
+//       this.$refs.example.$fullpage.moveNext() // Move to the next page
+//     },
+//     showPage () {
+//       this.pageNum++
+//       this.$refs.fullpage.$fullpage.$update()
+//     }
+//   }
+// }
   data () {
     var that = this
     return {
       index: 0,
-      pageNum: 0,
+      // pageNum: 0,
       opts: {
         start: 0,
         dir: 'v',
         loop: false,
-        duration: 300,
+        duration: 100,
         overflow: 'scroll',
         beforeChange: function (elem, current, next) {
           console.log('before', current, next)
@@ -177,15 +271,20 @@ export default {
           that.index = current
           console.log('after', current)
         }
+      },
+      horizontalOpts: {
+        start: 0,
+        dir: 'h',
+        loop: false,
+        afterChange (ele, current) {
+          that.active2 = current
+        }
       }
     }
   },
   methods: {
     moveTo: function (index) {
       const $fullpage = this.$refs.fullpage.$fullpage
-      /* Fast solution
-      index > this.index scroll to bottom
-      || scroll to top */
       if (index < this.index) {
         $fullpage.pageEles[this.index].scrollTo(0, 0)
       } else {
@@ -203,149 +302,124 @@ export default {
 </script>
 
 <style>
+* {
+    -webkit-overflow-scrolling: touch;
+}
 /* .fullpage-container {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.fullpage-wp {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.fullpage-wp.anim {
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: all 500ms ease-out 0s;
+    transition: all 500ms ease-out 0s;
+}
+.fullpage-wp.fullpage-wp-h {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.page {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.animated {
+    opacity: 1;
 } */
 
-#movieposters li #mac2-preview {
-  /* border:1px solid #7c50ff; */
-  -webkit-transform: rotateY(15deg);
-  /* -moz-box-shadow:0 3px 10px #888; */
-  /* -webkit-box-shadow:0 3px 10px #888; */
-  /* -webkit-transition-property: transform; */
-  -webkit-transition-duration: 1s;
-  margin: 0 0 0 25vw;
-}
-#movieposters li:hover #mac2-preview {
-  -webkit-transform: rotateY(0deg);
-  /* margin: 0 auto 0; */
-}
+    /* body {
+        margin: 0;
+        overflow: hidden;
+    } */
 
-#mac2-preview {
-  text-align: center;
-  /* align-items: center; */
-  /* width: 93vw; */
+    .fullpage-container {
+        position: absolute;
+        /* padding: 0; */
+        overflow: hidden;
+        margin: 0;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+    }
 
-  height: 840px;
-  background: url('../../assets/frames/imac-black.png') center center no-repeat;
-  background-size: 1500px;
-  /* margin: -25px auto 0; */
-}
+    .page-scroll {
+        padding-top: 100px;
+        background-color: rgb(75, 191, 195);
+        overflow-y: scroll;
+    }
+    .page-scroll::-webkit-scrollbar {
+      width: 0px;
+    }
 
-#mac2-preview iframe {
-  position: absolute;
-  margin: 94px -323px 0;
-  width: 644px;
-  height: 364px;
-}
+    /* .page {
+        display: block;
+        text-align: center;
+        font-size: 26px;
+        color: #eee;
+    }
 
-/* BASIC RESET */
-ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{margin:0; padding:0;}
+    .page-1 {
+        padding-top: 100px;
+        background: #1bbc9b;
+    }
 
-/* HTML ELEMENTS */
-body { background-color:#deddcd; font:14px/21px Arial,Helvetica,sans-serif; }
-h1 { font: bold 65px/60px Helvetica, Arial, Sans-serif; text-align: center; color: #eee; text-shadow: 0px 2px 6px #333; }
-h1 small{ font-size: 20px; text-transform:uppercase; letter-spacing: 14px; display: block; color: #000; }
-h2 a { display: block; text-decoration: none; margin: 0 0 30px 0; font: italic 45px Georgia, Times, Serif;  text-align: center; color: #bfe1f1; text-shadow: 0px 2px 6px #333; }
-h2 a:hover { color: #90bcd0; }
+    .page-2 {
+        padding-top: 100px;
+        background-color: rgb(75, 191, 195);
+        overflow-y: scroll;
+    }
+    .page-2::-webkit-scrollbar {
+      width: 0px;
+    }
+    .page-3 {
+        padding-top: 50px;
+        background: #aabbcc;
+    }
 
-/* COMMON CLASSES */
-.break {
-  clear:both;
-}
+    h3,
+    p {
+        font-size: 16px;
+    }
 
-/* WRAPPER */
-#wrapper {
-  width:960px;
-  margin:40px auto;
-}
+    .button-group {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        z-index: 9;
+    }
 
-/* CONTENT */
-#content { }
-#content .info {
-  padding:10px;
-}
+    .button-group button {
+        display: inline-block;
+        margin: 10px;
+        color: #000;
+        background: #fff;
+        background: rgba(255, 255, 255, .5);
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        padding: 9px 18px;
+        border: none;
+        outline: none;
+    }
 
-/* MOVIE POSTERS */
-#movieposters {
-  justify: center;
-  list-style:none;
-  margin:0 0;
-  height:550px;
-}
-#movieposters li {
-  margin:100px 0;
-  display:inline;
-  float:left;
-  -webkit-perspective: 500;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition-property: perspective;
-  -webkit-transition-duration: 0.5s;
-}
-
-#movieposters li:hover {
-  -webkit-perspective: 5000;
-}
-
-#movieposters li img {
-  border:10px solid #fcfafa;
-  -webkit-transform: rotateY(30deg);
-  -moz-box-shadow:0 3px 10px #888;
-  -webkit-box-shadow:0 3px 10px #888;
-  -webkit-transition-property: transform;
-  -webkit-transition-duration: 0.5s;
-}
-#movieposters li:hover img {
-  -webkit-transform: rotateY(0deg);
-}
-
-.movieinfo {
-  border:10px solid #fcfafa;
-  padding:20px; width:200px;
-  height:180px;
-  background-color:#deddcd;
-  margin:-195px 0 0 55px;
-  position:absolute;
-  -moz-box-shadow:0 20px 40px #888;
-  -webkit-box-shadow:0 20px 40px #888;
-  -webkit-transform: translateZ(30px)
-  rotateY(30deg);
-  -webkit-transition-property: transform, box-shadow, margin;
-  -webkit-transition-duration: 0.5s;
-}
-#movieposters li:hover .movieinfo {
-  -webkit-transform: rotateY(0deg);
-  -webkit-box-shadow:0 5px 10px #888;
-  margin:-175px 0 0 30px;
-}
-.movieinfo h3 {
-  color:#7a3f3a;
-  font-variant: small-caps;
-  font-family:Georgia,serif,Times;
-  text-align:center;
-  padding-bottom:15px;
-}
-.movieinfo p {
-  padding-bottom:15px;
-}
-.movieinfo a {
-  background-color:#7a3f3a;
-  padding:5px 10px;
-  color:#eee;
-  text-decoration:none;
-  display:block;
-  width:80px;
-  text-align:center;
-  margin:0 auto;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-}
-.movieinfo a:hover, .movieinfo a:focus {
-  background-color:#6a191f;
-  color:#fff;
-}
+    .button-group button.active {
+        background: rgba(0, 0, 0, .5);
+        color: #fff;
+    } */
 </style>
